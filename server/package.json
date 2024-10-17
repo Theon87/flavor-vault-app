@@ -18,3 +18,11 @@
         "ext": "ts,json,js",
         "exec": "npx tsc && node dist/server.js"
       },
+      "keywords": [],
+      "author": "",
+      "license": "ISC",
+      "dependencies": {
+        "dotenv": "^16.4.5",
+        "express": "^4.19.2",
+        "pg": "^8.12.0"
+      },
