@@ -65,3 +65,24 @@ Edit Items: Update quantities and details of each grocery item.
 
 Delete Items: Remove items from your grocery list.
 
+# Folder Structure
+
+flavor-vault-app/
+├── client/                  # React Frontend
+│   ├── public/
+│   ├── src/
+│       ├── components/      # Reusable UI components
+│       ├── pages/           # Page components
+│       ├── api/             # API requests to the server
+├── server/                  # Express Backend
+│   ├── config/              # Database and environment configurations
+│   ├── controllers/         # Controller logic for API routes
+│   ├── models/              # Sequelize models
+│   ├── routes/              # Express routes (auth, grocery)
+│   ├── middleware/          # Authentication middleware
+│   ├── .env                 # Environment variables file
+├── .gitignore
+├── README.md
+
+
+
