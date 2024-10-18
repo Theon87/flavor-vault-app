@@ -1,7 +1,5 @@
-
 import { Model, DataTypes, Optional } from "sequelize";
 import sequelize from "../config/connection";
-
 
 // // Define the Recipe attributes interface
 // interface RecipeAttributes {
@@ -30,6 +28,7 @@ import sequelize from "../config/connection";
 // }
 
 // // Initialize the model with Sequelize
+// export function RecipeFactory(sequelize: Sequelize): typeof Recipe {
 // Recipe.init(
 //   {
 //     id: {
