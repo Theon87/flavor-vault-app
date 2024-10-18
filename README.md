@@ -56,3 +56,12 @@ Create, edit, or delete items from your grocery list.
 
 Plan your cooking activities efficiently.
 
+# Grocery List Actions:
+Add Items: Add ingredients to your list with quantity and name.
+
+Mark Items as Purchased: Mark off items when bought.
+
+Edit Items: Update quantities and details of each grocery item.
+
+Delete Items: Remove items from your grocery list.
+
