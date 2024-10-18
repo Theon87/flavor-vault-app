@@ -35,3 +35,13 @@ ORM: Sequelize
 Authentication: JSON Web Tokens (JWT)
 
 Environment Configuration: dotenv
+
+# Installation
+
+Prerequisites
+Node.js: Ensure you have Node.js installed on your system.
+
+PostgreSQL: A PostgreSQL instance for the database.
+
+npm or Yarn: Package manager for dependency management.
+
