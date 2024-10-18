@@ -14,7 +14,24 @@ License
 
 # Features
 Secure Login System: Users must log in to access their personal grocery lists.
+
 JWT Authentication: JSON Web Tokens are used to authenticate and authorize users for secure access.
+
 Grocery List Management: Users can create, view, update, and delete grocery list items.
+
 Persistent Storage: All grocery list items are stored in a database and linked to individual users.
+
 Token Expiry Handling: Automatic token expiry to protect user data and session management.
+
+# Technologies Used
+Backend: Node.js, Express.js
+
+Frontend: React.js
+
+Database: PostgreSQL
+
+ORM: Sequelize
+
+Authentication: JSON Web Tokens (JWT)
+
+Environment Configuration: dotenv
