@@ -1,4 +1,4 @@
-import RecipeAttributes from "../src/model/recipe";
+import RecipeAttributes from "../model/recipe";
 // Define the Recipe seed data
 export const seedRecipes = async () => {
   await RecipeAttributes.bulkCreate(
