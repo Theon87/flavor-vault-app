@@ -1,5 +1,7 @@
-// import { Model, DataTypes, Optional } from "sequelize";
-// import { sequelize } from "../path/to/sequelizeInstance"; // replace with the actual path
+
+import { Model, DataTypes, Optional } from "sequelize";
+import sequelize from "../config/connection";
+
 
 // // Define the Recipe attributes interface
 // interface RecipeAttributes {
