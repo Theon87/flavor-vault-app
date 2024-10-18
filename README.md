@@ -45,3 +45,14 @@ PostgreSQL: A PostgreSQL instance for the database.
 
 npm or Yarn: Package manager for dependency management.
 
+# Usage
+
+Once the app is running:
+Navigate to http://localhost:3000 in your browser.
+
+Sign up or log in to access your personal Flavor Vault.
+
+Create, edit, or delete items from your grocery list.
+
+Plan your cooking activities efficiently.
+
