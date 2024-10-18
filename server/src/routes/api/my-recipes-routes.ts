@@ -15,4 +15,4 @@ router.get('/', async (_req: Request, res: Response) => {
   }
 });
 
-export { router as myRecipesRouterRouter };
+export { router as myRecipesRouter };
