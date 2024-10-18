@@ -17,10 +17,10 @@ class User
   extends Model<UserAttributes, UserCreationAttributes>
   implements UserAttributes
 {
-  public id: number;
-  public username: string;
-  public email: string;
-  public password: string;
+  public id!: number;
+  public username!: string;
+  public email!: string;
+  public password!: string;
 
   public readonly createdAt!: Date;
   public readonly updatedAt!: Date;
