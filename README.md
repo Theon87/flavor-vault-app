@@ -65,6 +65,17 @@ Edit Items: Update quantities and details of each grocery item.
 
 Delete Items: Remove items from your grocery list.
 
+# API Endpoints
+
+Method	        Endpoint	                        Description	       
+POST	        /auth/login	                        Login and receive a JWT	
+POST	        /auth/signup	                    Register a new user	No
+GET	            /grocery-list	                    Retrieve all grocery list items	
+POST	        /grocery-list/add	                Add a new grocery item	
+PUT	            /grocery-list/update/:id	        Update quantity of a grocery item	
+PUT         	/grocery-list/mark-purchased/:id	Mark item as purchased
+DELETE	        /grocery-list/delete/:id	        Delete a grocery item	
+
 # Folder Structure
 
 flavor-vault-app/
