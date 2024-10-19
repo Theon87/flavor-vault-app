@@ -1,5 +1,5 @@
 import { Model, Sequelize, DataTypes, Optional } from "sequelize";
-import bcrypt from "bcrypt";
+// import bcrypt from "bcrypt";
 
 // Define the Recipe attributes interface
 interface UserAttributes {
@@ -13,7 +13,7 @@ interface UserAttributes {
 interface UserCreationAttributes extends Optional<UserAttributes, "id"> {}
 
 // Define the Recipe model class
-class User
+export class User
   extends Model<UserAttributes, UserCreationAttributes>
   implements UserAttributes
 {
@@ -25,11 +25,11 @@ class User
   public readonly createdAt!: Date;
   public readonly updatedAt!: Date;
 
-  // Method to hash and set the password for the user
-  public async setPassword(password: string) {
-    const saltLicks = 20;
-    this.password = await bcrypt.hash(password, saltLicks);
-  }
+  // // Method to hash and set the password for the user
+  // public async setPassword(password: string) {
+  //   const saltLicks = 20;
+  //   this.password = await bcrypt.hash(password, saltLicks);
+  // }
 }
 
 // Initialize the model with Sequelize
@@ -57,18 +57,18 @@ export function UserFactory(sequelize: Sequelize): typeof User {
     {
       tableName: "users", // Name of the table in PostgreSQL
       sequelize, // The Sequelize instance that connects to PostgreSQL
-      hooks: {
-        // Before creating a new user, hash and set the password
-        beforeCreate: async (user: User) => {
-          await user.setPassword(user.password);
-        },
-        // Before updating a user, hash and set the new password if it has changed
-        beforeUpdate: async (user: User) => {
-          if (user.changed("password")) {
-            await user.setPassword(user.password);
-          }
-        },
-      },
+      // hooks: {
+      //   // Before creating a new user, hash and set the password
+      //   beforeCreate: async (user: User) => {
+      //     await user.setPassword(user.password);
+      //   },
+      //   // Before updating a user, hash and set the new password if it has changed
+      //   beforeUpdate: async (user: User) => {
+      //     if (user.changed("password")) {
+      //       await user.setPassword(user.password);
+      //     }
+      //   },
+      // },
     }
   );
   return User;
