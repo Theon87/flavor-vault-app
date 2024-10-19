@@ -105,5 +105,8 @@ DB_USER	             Username for the PostgreSQL database
 DB_PASSWORD	         Password for the PostgreSQL database
 JWT_SECRET	         Secret key for signing JWTs
 
+# License
+
+This project is licensed under the MIT License.
 
 
