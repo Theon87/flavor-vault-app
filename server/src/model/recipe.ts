@@ -1,5 +1,4 @@
-import { Model, DataTypes, Optional } from "sequelize";
-import sequelize from "../config/connection";
+import { Model, DataTypes, Optional, Sequelize } from "sequelize";
 
 
 
@@ -66,7 +65,10 @@ Recipe.init(
     modelName: "Recipe",
     tableName: "recipes",
   }
+  
 );
 
+return Recipe;
+}
 
 export default Recipe;
