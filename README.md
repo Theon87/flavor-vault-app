@@ -105,6 +105,18 @@ DB_USER	             Username for the PostgreSQL database
 DB_PASSWORD	         Password for the PostgreSQL database
 JWT_SECRET	         Secret key for signing JWTs
 
+# Future Enhancements
+
+Enable user-generated recipes and sharing to boost community engagement and allow users to contribute their own culinary creations.
+
+Integrate grocery lists with online shopping platforms for seamless ordering of ingredients directly from the app.
+
+Add nutrition tracking and meal planning tools to help users maintain their dietary goals while using the app.
+
+Incorporate voice command features for hands-free interaction, enhancing convenience during cooking.
+
+Implement advanced filtering options and personalized recipe suggestions based on user preferences and available ingredients.
+
 # License
 
 This project is licensed under the MIT License.
