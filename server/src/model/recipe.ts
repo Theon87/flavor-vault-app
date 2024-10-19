@@ -32,6 +32,7 @@ class Recipe
 
 
 // Initialize the model with Sequelize
+export function RecipeFactory(sequelize: Sequelize): typeof Recipe {
 Recipe.init(
   {
     id: {
