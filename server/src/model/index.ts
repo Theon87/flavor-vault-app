@@ -1,5 +1,5 @@
 import sequelize from '../config/connection.js';
-import { RecipeFactory } from './recipe'
+import { RecipeFactory } from './recipe.js';
 
 // Initialize the models
 

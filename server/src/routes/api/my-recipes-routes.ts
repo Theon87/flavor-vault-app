@@ -10,8 +10,9 @@ router.get('/', async (_req: Request, res: Response) => {
 
     const recipes = await Recipe.findAll();
     res.json(recipes);
-
     console.log('GET /recipes');
+    res.json({ message: 'GET /recipes' });
+
   } catch (error: any) {
     res.status(500).json({ message: error.message });
   }
