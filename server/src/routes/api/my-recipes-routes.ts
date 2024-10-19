@@ -1,6 +1,6 @@
 import express from 'express';
 import type { Request, Response } from 'express';
-//import { Recipe } from '../../model/index.js';
+import { Recipe } from '../../model/index.js';
 
 const router = express.Router();
 
