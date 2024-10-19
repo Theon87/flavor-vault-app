@@ -1,7 +1,10 @@
 import React from 'react'
+import Header from '../components/Header'
 const Home = () {
     return (
-        <div>Home</div>
+        <main className='w-full flex flex-col'>
+        Home
+        </main>
     )
 }
 export default Home
