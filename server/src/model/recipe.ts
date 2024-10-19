@@ -1,6 +1,6 @@
-
 import { Model, DataTypes, Optional } from "sequelize";
 import sequelize from "../config/connection";
+
 
 
 // Define the Recipe attributes interface
@@ -12,6 +12,7 @@ interface RecipeAttributes {
   instructions: string; // cooking instructions
   userId: number; // foreign key to associate with a user
 }
+
 
 // Define the attributes required during creation (id is excluded)
 interface RecipeCreationAttributes extends Optional<RecipeAttributes, "id"> {}
@@ -28,6 +29,7 @@ class Recipe
   public instructions!: string;
   public userId!: number;
 }
+
 
 // Initialize the model with Sequelize
 Recipe.init(
@@ -64,5 +66,6 @@ Recipe.init(
     tableName: "recipes",
   }
 );
+
 
 export default Recipe;
