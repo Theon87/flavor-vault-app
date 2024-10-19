@@ -84,5 +84,15 @@ flavor-vault-app/
 ├── .gitignore
 ├── README.md
 
+# Environment Variables
+
+Variable	         Description
+PORT	             Port the server will run on (e.g., 3001)
+DB_URL	             URL of the PostgreSQL database
+DB_NAME	             Name of the PostgreSQL database
+DB_USER	             Username for the PostgreSQL database
+DB_PASSWORD	         Password for the PostgreSQL database
+JWT_SECRET	         Secret key for signing JWTs
+
 
 
