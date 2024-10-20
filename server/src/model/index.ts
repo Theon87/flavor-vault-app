@@ -10,4 +10,4 @@ const User = UserFactory(sequelize);
 // Create associations between the models
 
 
-export { sequelize, User, Recipe };
+export { Recipe, User };
