@@ -1,6 +1,6 @@
 import { seedUsers } from "./user-seeds.js";
-import { seedRecipes } from "./recipe-seeds.js";
-import sequelize from "../config/connection";
+// import { seedRecipes } from "./recipe-seeds.js";
+import sequelize from "../config/connection.js";
 
 const seedAll = async (): Promise<void> => {
   try {
@@ -10,8 +10,8 @@ const seedAll = async (): Promise<void> => {
     await seedUsers();
     console.log("Users seeded successfully.");
 
-    await seedRecipes();
-    console.log("Recipes seeded successfully.");
+    // await seedRecipes();
+    // console.log("Recipes seeded successfully.");
 
     process.exit(0);
   } catch (error) {
