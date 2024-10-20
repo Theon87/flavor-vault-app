@@ -6,8 +6,6 @@
 
 // Once we have the search bar we will need to display the recipes that match the search pulled from our api.
 
-// When the user clicks on a recipe we will need to display the recipe details.
-
-// We will also need to have a button to add a recipe to the users my recipes.
+// When the user clicks on a recipe we will need to display the recipe details on a seperate page (recipe.tsx).
 
 // Finally we'll need the footer
