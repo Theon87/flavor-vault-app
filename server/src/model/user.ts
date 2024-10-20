@@ -13,10 +13,7 @@ interface UserAttributes {
 interface UserCreationAttributes extends Optional<UserAttributes, "id"> {}
 
 // Define the Recipe model class
-export class User
-  extends Model<UserAttributes, UserCreationAttributes>
-  implements UserAttributes
-{
+export class User extends Model<UserAttributes, UserCreationAttributes> implements UserAttributes {
   public id!: number;
   public username!: string;
   public email!: string;
@@ -27,8 +24,8 @@ export class User
 
   // Method to hash and set the password for the user
   public async setPassword(password: string) {
-    const saltLicks = 20;
-    this.password = await bcrypt.hash(password, saltLicks);
+    const saltRounds = 20;
+    this.password = await bcrypt.hash(password, saltRounds);
   }
 }
 
@@ -55,7 +52,7 @@ export function UserFactory(sequelize: Sequelize): typeof User {
       },
     },
     {
-      tableName: "users", // Name of the table in PostgreSQL
+      tableName: 'users', // Name of the table in PostgreSQL
       sequelize, // The Sequelize instance that connects to PostgreSQL
       hooks: {
         // Before creating a new user, hash and set the password
@@ -68,10 +65,8 @@ export function UserFactory(sequelize: Sequelize): typeof User {
             await user.setPassword(user.password);
           }
         },
-      },
+      }
     }
   );
   return User;
 }
-
-export default User;
