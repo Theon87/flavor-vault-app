@@ -17,7 +17,7 @@ interface RecipeAttributes {
 interface RecipeCreationAttributes extends Optional<RecipeAttributes, "id"> {}
 
 // Define the Recipe model class
-class Recipe
+export class Recipe
   extends Model<RecipeAttributes, RecipeCreationAttributes>
   implements RecipeAttributes
 {
