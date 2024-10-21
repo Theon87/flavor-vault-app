@@ -77,3 +77,4 @@ router.delete('/:id', async (req: Request, res: Response) => {
     res.status(500).json({ message: error.message });
   }
 });
+export { router as userRouter };
