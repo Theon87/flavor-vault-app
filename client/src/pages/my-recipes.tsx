@@ -9,3 +9,5 @@
 // We will also need to have a button to delete a recipe from the users my recipes.
 
 // Finally we'll need the footer
+const myRecipes = () => {};
+export default myRecipes;

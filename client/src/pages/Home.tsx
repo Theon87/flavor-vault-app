@@ -11,9 +11,9 @@
 // Finally we'll need the footer
 const Home = () => {
     return (
-        <div>
-            <h1>Home</h1>
-        </div>
-    )
+        <section>
+            <h1>Lucy I'm home.</h1>
+        </section>
+      );
 }
 export default Home;

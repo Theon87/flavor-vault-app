@@ -12,7 +12,8 @@ import './index.css'
 // )
 
 
-import Home from './pages/home.tsx';
+import ErrorPage from './pages/ErrorPage.tsx';
+import Home from './pages/Home.tsx';
 import Login from './pages/Login.tsx';
 // import myRecipe from './pages/my-recipes.tsx';
 
@@ -20,7 +21,7 @@ const router = createBrowserRouter([
   {
     path: '/',
     element: <App />,
-    errorElement: <Recipe />,
+    errorElement: <ErrorPage />,
     children: [
       {
         index: true,
