@@ -9,6 +9,15 @@ const User = UserFactory(sequelize);
 const GroceryList = GroceryListFactory(sequelize); // Initialize GroceryList
 
 // Create associations between the models
+User.hasOne(GroceryList, {
+    onDelete: 'CASCADE',
+});
+
+Recipe.belongsTo(User);
+
+User.hasMany(Recipe, {
+    onDelete: 'CASCADE',
+});
 
 export { Recipe, User, GroceryList }; // Export the GroceryList model
 
