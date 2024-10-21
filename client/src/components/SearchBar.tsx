@@ -1,11 +1,12 @@
+import React from 'react'
 import { useNavigate } from 'react-router-dom'
-import { CiSearch } from "react-icons/ci";
+import { FaSearch } from "react-icons/fa";
 import { useState } from 'react';
 
 const SearchBar = () => {
   const [query, setQuery] = useState('')
   const navigate = useNavigate()
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     navigate(`/api/recipes/${query}`)
     setQuery('')
@@ -24,7 +25,9 @@ const SearchBar = () => {
           <div className='w-full lg:w-2/3 mx-auto'>
             <form onSubmit={handleSubmit} className='flex border-2 border-green-600 rounded-full px-4 py-2 text-lg'>
               <input type="text" className=' w-full bg-transparent outline-none search-bar' placeholder='Search Recipe...' value={query} onChange={(e) => setQuery(e.target.value)} required />
-              <button className='font-bold'><CiSearch size={25} className='text-green-500' /></button>
+              <button type="submit" className="ml-2">
+                <FaSearch size={20} className="text-white" />
+              </button>
             </form>
           </div>
         </div>
