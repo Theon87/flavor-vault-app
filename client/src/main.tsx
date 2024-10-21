@@ -11,10 +11,10 @@ import './index.css'
 //   </StrictMode>,
 // )
 
-import my-recipies from './pages/my-recipies.tsx';
+
 import Home from './pages/home.tsx';
 import Login from './pages/Login.tsx';
-
+// import myRecipe from './pages/my-recipes.tsx';
 
 const router = createBrowserRouter([
   {

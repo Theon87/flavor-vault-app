@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import react from 'react'
-import './App.css'
+import './index.css'
 
 function App() {
   
