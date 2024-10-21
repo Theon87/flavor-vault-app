@@ -15,6 +15,7 @@ import './Home.css'; // Optional: Import CSS for styling
 const Home: React.FC = () => {
     const [searchTerm, setSearchTerm] = useState('');
     const [recipes, setRecipes] = useState([]);
+    const [filteredRecipes, setFilteredRecipes] = useState([]);
     return (
         <div>
             <header> 
