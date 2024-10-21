@@ -9,3 +9,11 @@
 // When the user clicks on a recipe we will need to display the recipe details on a seperate page (recipe.tsx).
 
 // Finally we'll need the footer
+const Home = () => {
+    return (
+        <section>
+            <h1>Lucy I'm home.</h1>
+        </section>
+      );
+}
+export default Home;

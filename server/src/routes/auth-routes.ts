@@ -45,3 +45,4 @@ const router = Router();
 router.post('/login', login);  // Define the login route
 
 export default router;  // Export the router instance
+
