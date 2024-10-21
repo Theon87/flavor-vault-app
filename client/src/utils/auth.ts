@@ -12,6 +12,16 @@ class AuthService {
       const token = this.getToken();
       return token;
     }
+
+    isTokenExpired(token: string) {
+      //checks if the token is expired and returns a boolean value
+      const decoded = jwtDecode<JwtPayload>(token);
+      if (decoded?.exp && decoded?.exp < Date.now() / 1000) {
+        return true;
+      } else {
+        return false;
+      }
+    }
   
     // Retrieve the JWT token from localStorage
     getToken(): string {
