@@ -8,4 +8,8 @@ const router = express.Router();
 // Login route
 router.post('/login', async (req: Request, res: Response) => {
     const { username, password } = req.body;
-  
+      // Find the user by username
+  const user = users.find(u => u.username === username);
+  if (!user) {
+    return res.status(401).json({ message: 'Invalid credentials' });
+  }
