@@ -2,6 +2,7 @@ import { User } from "../model/index.js";
 
 // Define the User seed data
 export const seedUsers = async () => {
+  console.log("creating users")
   await User.bulkCreate(
     [
       {
@@ -22,4 +23,5 @@ export const seedUsers = async () => {
     ],
     { individualHooks: true }
   );
+  
 };
