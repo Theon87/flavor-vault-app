@@ -3,8 +3,8 @@ import express from 'express';
 import { myRecipesRouter } from './my-recipes-routes.js';
 import { userRouter } from './user-route.js';
 
-import { groceryListRouter } from './grocery-list-routes';
-import { authRoutes } from './auth-routes'; 
+import { groceryListRouter } from './grocery-list-routes.js';
+// import { login } from './auth-routes'; 
 
 
 const router = express.Router();
@@ -14,7 +14,7 @@ router.use('/recipes', myRecipesRouter);
 router.use('/users', userRouter);
 
 router.use('/grocery-list', groceryListRouter);
-router.use('/auth', authRoutes);
+// router.use('/auth', login);
 
 
 export default router;
