@@ -24,8 +24,8 @@ const Home = () => {
         <div>
             <Navigation />
             <Header />
-            <Footer />
             <SearchBar />
+            <Footer />
         </div>
     )
 };
