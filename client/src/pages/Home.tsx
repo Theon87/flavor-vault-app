@@ -2,7 +2,6 @@
 //This willl be our home page
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './Home.css'; // Optional: Import CSS for styling
 //We will need a header, a nav bar containg home, login, and my recipes.
 
 //We will need a search bar to search for recipes on the page.
@@ -13,10 +12,11 @@ import './Home.css'; // Optional: Import CSS for styling
 
 // Finally we'll need the footer
 const Home: React.FC = () => {
-    const [searchTerm, setSearchTerm] = useState('');
-    const [recipes, setRecipes] = useState([]);
-    const [filteredRecipes, setFilteredRecipes] = useState([]);
-     // Fetch recipes from API (replace with your API endpoint)
+    const [searchTerm, setSearchTerm] = useState(''); //searchTerm: A string to hold the user's search input.
+    const [recipes, setRecipes] = useState([]); //recipes: An array to store all the fetched recipes from the API.
+    const [filteredRecipes, setFilteredRecipes] = useState([]); //filteredRecipes: An array to store recipes that match the search term. Initially, it can be set to an empty array.
+    //The useState hook initializes these pieces of state. 
+    // Fetch recipes from API (replace with your API endpoint)
      useEffect(() => {
         const fetchRecipes = async () => {
             try {
