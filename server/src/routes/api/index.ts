@@ -10,5 +10,6 @@ const router = express.Router();
 // // router.use('/login', loginRouter);
 router.use('/recipes', myRecipesRouter);
 router.use('/grocery-list', groceryListRouter);
+router.use('/auth', authRoutes);
 
 export default router;
