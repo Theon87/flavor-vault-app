@@ -14,6 +14,7 @@ import './index.css'
 import ErrorPage from './pages/ErrorPage.tsx';
 import Home from './pages/Home.tsx';
 import Login from './pages/Login.tsx';
+import UserRecipes from './pages/my-recipes.tsx';
 
 
 const router = createBrowserRouter([
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
         path: '/login',
         element: <Login />
       }, 
+      {
+        path: './my-recipes',
+        element: <UserRecipes />
+      }
     ]
   }
 ])
