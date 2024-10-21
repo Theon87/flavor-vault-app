@@ -1,12 +1,13 @@
 import { useNavigate } from 'react-router-dom'
 import { CiSearch } from "react-icons/ci";
+import { useState } from 'react';
 
 const SearchBar = () => {
   const [query, setQuery] = useState('')
   const navigate = useNavigate()
   const handleSubmit = (e) => {
     e.preventDefault()
-    navigate(`/meal/${query}`)
+    navigate(`/api/recipes/${query}`)
     setQuery('')
 
   }
