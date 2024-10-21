@@ -4,6 +4,8 @@
 import { Link } from 'react-router-dom';
 // import { useState, useEffect } from 'react';
 import Navigation from '../components/Navigation';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 import '../index.css';
 
 //We will need a header, a nav bar containg home, login, and my recipes.
@@ -20,17 +22,8 @@ const Home = () => {
     return (
         <div>
             <Navigation />
-
-                <input type="text" placeholder="Search for recipes..." />
-                <div className="recipe-list">
-                    <div className="recipe-item">
-                        <Link to="/recipe/1">
-                            <h3>Recipe Title</h3>
-                            <p>Recipe Description</p>
-                        </Link>
-                    </div>
-                </div>
-
+            <Header />
+            <Footer />
         </div>
     )
 };
