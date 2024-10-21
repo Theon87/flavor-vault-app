@@ -1,6 +1,7 @@
 // import { useState } from 'react'
 // import react from 'react'
 import './index.css'
+import Home from './pages/Home.tsx';
 
 function App() {
   
@@ -8,7 +9,7 @@ function App() {
   return (
     <>
       <div>
-        <h1>Recipe App</h1>
+        <Home />
       </div>
     </>
   )
