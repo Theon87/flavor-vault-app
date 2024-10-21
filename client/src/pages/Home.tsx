@@ -20,12 +20,7 @@ const Home = () => {
     return (
         <div>
             <Navigation />
-            <header>
-                <h1>Flavor Vault</h1>
-            </header>
-            <main>
-                <h2>Welcome to Flavor Vault!</h2>
-                <p>Discover and share amazing recipes.</p>
+
                 <input type="text" placeholder="Search for recipes..." />
                 <div className="recipe-list">
                     <div className="recipe-item">
@@ -35,7 +30,6 @@ const Home = () => {
                         </Link>
                     </div>
                 </div>
-            </main>
             <footer>
                 <p>&copy; 2024 My Recipe App</p>
             </footer>
