@@ -6,7 +6,6 @@ const Header = () => {
         <h1>Flavor Vault</h1>
             <main>
                 <h2>Welcome to Flavor Vault!</h2>
-                <p>Discover and share amazing recipes.</p>
             </main>
     </div>
   )
