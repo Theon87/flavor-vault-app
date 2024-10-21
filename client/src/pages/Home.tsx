@@ -30,9 +30,7 @@ const Home = () => {
                         </Link>
                     </div>
                 </div>
-            <footer>
-                <p>&copy; 2024 My Recipe App</p>
-            </footer>
+
         </div>
     )
 };
