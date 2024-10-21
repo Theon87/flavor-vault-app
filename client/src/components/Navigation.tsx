@@ -21,7 +21,7 @@ function classNames(...classes: string[]): string {
 export default function Navigation() {
   return (
     <>
-      <Disclosure className="bg-gray-800">
+      <Disclosure as='nav' className="bg-gray-800">
         <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
           <div className="relative flex h-16 items-center justify-between">
             <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -70,7 +70,7 @@ export default function Navigation() {
               </button>
 
               {/* Profile dropdown */}
-              <Menu className="relative ml-3">
+              <Menu as='div' className="relative ml-3">
                 <div>
                   <MenuButton className="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                     <span className="absolute -inset-1.5" />
@@ -110,8 +110,9 @@ export default function Navigation() {
         <DisclosurePanel className="sm:hidden">
           <div className="space-y-1 px-2 pb-3 pt-2">
             {navigation.map((item) => (
-              <a
+              <DisclosureButton
                 key={item.name}
+                as="a"
                 href={item.href}
                 aria-current={item.current ? 'page' : undefined}
                 className={classNames(
@@ -120,7 +121,7 @@ export default function Navigation() {
                 )}
               >
                 {item.name}
-              </a>
+              </DisclosureButton>
             ))}
           </div>
         </DisclosurePanel>
