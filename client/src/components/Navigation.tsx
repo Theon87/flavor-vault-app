@@ -8,8 +8,12 @@ const Navbar = () => {
       path:"/"
     },
     {
-      name:"Your Favourite Meals",
-      path:"/favourite"
+      name:"My Recipes",
+      path:"/my-recipes"
+    },
+    {
+      name:"Login",
+      path:"/login"
     },
   ]
 
