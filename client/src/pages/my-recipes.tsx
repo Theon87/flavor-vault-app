@@ -9,5 +9,12 @@
 // We will also need to have a button to delete a recipe from the users my recipes.
 
 // Finally we'll need the footer
-const myRecipes = () => {};
-export default myRecipes;
+const userRecipes = () => {
+    return (
+        <div>
+            <h1>My Recipes</h1>
+            <p>Here is your personal recipe collection.</p>
+        </div>
+    );
+};
+export default userRecipes;
