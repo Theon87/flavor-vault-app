@@ -12,7 +12,7 @@ import './index.css'
 // )
 
 import ErrorPage from './pages/ErrorPage.tsx';
-import Home from './pages/home.tsx';
+import Home from './pages/Home.tsx';
 import Login from './pages/Login.tsx';
 
 
