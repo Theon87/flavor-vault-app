@@ -1,8 +1,8 @@
 //app/client/src/pages/home.tsx
 //This willl be our home page
-import React from 'react';
+// import React from 'react';
 import { Link } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+// import { useState, useEffect } from 'react';
 import Navigation from '../components/Navigation';
 import '../index.css';
 
@@ -22,13 +22,6 @@ const Home = () => {
             <Navigation />
             <header>
                 <h1>Flavor Vault</h1>
-                <nav>
-                    <ul>
-                        <li><Link to="/">Home</Link></li>
-                        <li><Link to="/login">Login</Link></li>
-                        <li><Link to="/my-recipes">My Recipes</Link></li>
-                    </ul>
-                </nav>
             </header>
             <main>
                 <h2>Welcome to Flavor Vault!</h2>
