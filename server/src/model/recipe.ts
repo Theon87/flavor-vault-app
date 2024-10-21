@@ -1,5 +1,6 @@
-import { Model, DataTypes, Optional } from "sequelize";
-import { sequelize } from "../path/to/sequelizeInstance"; // replace with the actual path
+import { Model, DataTypes, Optional, Sequelize } from "sequelize";
+
+
 
 // Define the Recipe attributes interface
 interface RecipeAttributes {
@@ -11,11 +12,12 @@ interface RecipeAttributes {
   userId: number; // foreign key to associate with a user
 }
 
+
 // Define the attributes required during creation (id is excluded)
 interface RecipeCreationAttributes extends Optional<RecipeAttributes, "id"> {}
 
 // Define the Recipe model class
-class Recipe
+export class Recipe
   extends Model<RecipeAttributes, RecipeCreationAttributes>
   implements RecipeAttributes
 {
@@ -27,7 +29,9 @@ class Recipe
   public userId!: number;
 }
 
+
 // Initialize the model with Sequelize
+export function RecipeFactory(sequelize: Sequelize): typeof Recipe {
 Recipe.init(
   {
     id: {
@@ -61,6 +65,10 @@ Recipe.init(
     modelName: "Recipe",
     tableName: "recipes",
   }
+  
 );
+
+return Recipe;
+}
 
 export default Recipe;
