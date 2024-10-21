@@ -24,9 +24,9 @@ export const authenticateToken = (req: Request, res: Response, next: NextFunctio
       if (err) {
         return res.sendStatus(403); // Send forbidden status if the token is invalid
       }
+      // Attach the user information to the request object with type assertion
+      (req as Request & { user: JwtPayload }).user = user as JwtPayload;
 
-      // Attach the user information to the request object
-      req.user = user as JwtPayload;
       return next(); // Call the next middleware function
     });
   } else {
