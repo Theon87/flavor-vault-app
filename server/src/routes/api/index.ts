@@ -3,7 +3,7 @@ import express from 'express';
 import { myRecipesRouter } from './my-recipes-routes.js';
 import { userRouter } from './user-route.js';
 
-import { groceryListRouter } from './grocery-list-routes';
+import { groceryListRouter } from './grocery-list-routes.js';
 import { authRoutes } from './auth-routes'; 
 
 

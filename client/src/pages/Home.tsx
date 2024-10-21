@@ -1,4 +1,6 @@
+//app/client/src/pages/home.tsx
 //This willl be our home page
+import React from 'react';
 
 //We will need a header, a nav bar containg home, login, and my recipes.
 
