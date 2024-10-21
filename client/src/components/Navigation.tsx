@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import logo from '../assets/images/flavor-vault-logo.png'
+import '../index.css';
 
 const Navbar = () => {
   const links = [

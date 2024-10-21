@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 // import { FaSearch } from "react-icons/fa";
 import { useState } from 'react';
 import { Button } from "@material-tailwind/react";
+import '../index.css';
 
 const SearchBar = () => {
   const [query, setQuery] = useState('')
