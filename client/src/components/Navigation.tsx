@@ -1,18 +1,24 @@
 import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 
-const navigation = [
-  { name: 'Dashboard', href: '#', current: true },
-  { name: 'Team', href: '#', current: false },
-  { name: 'Projects', href: '#', current: false },
-  { name: 'Calendar', href: '#', current: false },
+interface NavigationItem {
+    name: string;
+    href: string;
+    current: boolean;
+  }
+
+const navigation: NavigationItem[] = [
+  { name: 'Home', href: '/', current: true },
+  { name: 'Login', href: '/auth/login', current: false },
+  { name: 'My Recipes', href: '/api/my-recipes', current: false },
 ]
 
-function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
-}
+function classNames(...classes: string[]): string {
+    return classes.filter(Boolean).join(' ');
+  }
 
-export default function Example() {
+
+export default function Navigation() {
   return (
     <Disclosure as="nav" className="bg-gray-800">
       <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -29,8 +35,8 @@ export default function Example() {
           <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
             <div className="flex flex-shrink-0 items-center">
               <img
-                alt="Your Company"
-                src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=500"
+                alt="Flavor Vault"
+                src='../assets/images/flavor-vault-logo.png'
                 className="h-8 w-auto"
               />
             </div>

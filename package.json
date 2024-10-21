@@ -30,6 +30,8 @@
     "wait-on": "^7.2.0"
   },
   "dependencies": {
+    "@headlessui/react": "^2.1.10",
+    "@heroicons/react": "^2.1.5",
     "dotenv": "^16.4.5",
     "sequelize": "^6.37.4",
     "typescript": "^5.6.3"
