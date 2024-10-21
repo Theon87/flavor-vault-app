@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <div>
         <footer>
-            <p>&copy; 2024 My Flavor Vault App</p>
+            <p className='text-center py-2'>&copy; 2024 My Flavor Vault App</p>
         </footer>
     </div>
   )
