@@ -16,3 +16,20 @@ router.get('/', async (_req: Request, res: Response) => {
     res.status(500).json({ message: error.message });
   }
 });
+
+// GET /users/:id - Get a user by id
+router.get('/:id', async (req: Request, res: Response) => {
+  const { id } = req.params;
+  try {
+    const user = await User.findByPk(id, {
+      attributes: { exclude: ['password'] }
+    });
+    if (user) {
+      res.json(user);
+    } else {
+      res.status(404).json({ message: 'User not found' });
+    }
+  } catch (error: any) {
+    res.status(500).json({ message: error.message });
+  }
+});
