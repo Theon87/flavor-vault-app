@@ -15,7 +15,7 @@ import './Home.css'; // Optional: Import CSS for styling
 const Home: React.FC = () => {
     return (
         <div>
-            <header>
+            <header> 
                 <h1>Flavor Vault</h1>
                 <nav>
                     <ul>
@@ -25,6 +25,11 @@ const Home: React.FC = () => {
                     </ul>
                 </nav>
             </header>
+            <main>
+            <h2>Welcome to Flavor Vault!</h2>
+            <p>Discover and share amazing recipes.</p>
+            </main>
         </div>
     )
-}
+};
+export default Home;
