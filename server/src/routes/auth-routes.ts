@@ -5,9 +5,10 @@ import bcrypt from 'bcrypt';  // Import the bcrypt library for password hashing
 
 const router = Router();  // Initialize the router
 
-// Login function to authenticate a user
-export const login = async (req: Request, res: Response) => {
-  const { username, password } = req.body;  // Extract username and password from request body
+// POST /login - Authenticate user and return JWT token
+router.post('/login', async (req: Request, res: Response) => {
+  try {
+    const { username, password } = req.body;  // Extract username and password from request body
 
   // Find the user in the database by username
   const user = await User.findOne({
