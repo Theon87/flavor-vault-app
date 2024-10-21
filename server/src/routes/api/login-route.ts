@@ -18,3 +18,10 @@ router.post('/login', async (req: Request, res: Response) => {
  if (!isMatch) {
    return res.status(401).json({ message: 'Invalid credentials' });
  }
+  // Create JWT token
+  const token = jwt.sign({ id: user.id, username: user.username }, 'your_jwt_secret', { expiresIn: '1h' });
+
+  return res.json({ token });
+});
+
+export default router;
