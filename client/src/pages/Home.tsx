@@ -14,6 +14,7 @@ import './Home.css'; // Optional: Import CSS for styling
 // Finally we'll need the footer
 const Home: React.FC = () => {
     const [searchTerm, setSearchTerm] = useState('');
+    const [recipes, setRecipes] = useState([]);
     return (
         <div>
             <header> 
