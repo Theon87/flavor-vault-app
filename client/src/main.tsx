@@ -11,7 +11,7 @@ import './index.css'
 //   </StrictMode>,
 // )
 
-import my-recipies from './pages/my-recipies.tsx';
+import ErrorPage from './pages/ErrorPage.tsx';
 import Home from './pages/home.tsx';
 import Login from './pages/Login.tsx';
 
@@ -20,7 +20,7 @@ const router = createBrowserRouter([
   {
     path: '/',
     element: <App />,
-    errorElement: <Recipe />,
+    errorElement: <ErrorPage />,
     children: [
       {
         index: true,
