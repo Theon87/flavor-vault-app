@@ -41,6 +41,11 @@ Recipe.belongsToMany(GroceryList, {
     as: 'recipes',
   });
 
+  // Sync the models with the database
+sequelize.sync({ alter: true })
+.then(() => console.log('Models synchronized with the database.'))
+.catch((err) => console.error('Error syncing models:', err));
+
 
 
 
