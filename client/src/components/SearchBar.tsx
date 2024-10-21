@@ -1,7 +1,8 @@
-import React from 'react'
-import { useNavigate } from 'react-router-dom'
-import { FaSearch } from "react-icons/fa";
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+// import { FaSearch } from "react-icons/fa";
 import { useState } from 'react';
+import { Button } from "@material-tailwind/react";
 
 const SearchBar = () => {
   const [query, setQuery] = useState('')
@@ -25,9 +26,7 @@ const SearchBar = () => {
           <div className='w-full lg:w-2/3 mx-auto'>
             <form onSubmit={handleSubmit} className='flex border-2 border-green-600 rounded-full px-4 py-2 text-lg'>
               <input type="text" className=' w-full bg-transparent outline-none search-bar' placeholder='Search Recipe...' value={query} onChange={(e) => setQuery(e.target.value)} required />
-              <button type="submit" className="ml-2">
-                <FaSearch size={20} className="text-white" />
-              </button>
+              <Button>Submit</Button>
             </form>
           </div>
         </div>
