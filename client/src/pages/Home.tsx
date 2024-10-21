@@ -21,7 +21,7 @@ const Home: React.FC = () => {
                     <ul>
                         <li><Link to="/">Home</Link></li>
                         <li><Link to="/login">Login</Link></li>
-                        <li></li>
+                        <li><Link to="/my-recipes">My Recipes</Link></li>
                     </ul>
                 </nav>
             </header>
