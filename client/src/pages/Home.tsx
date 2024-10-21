@@ -7,6 +7,7 @@ import Navigation from '../components/Navigation';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import '../index.css';
+import SearchBar from '../components/SearchBar';
 
 //We will need a header, a nav bar containg home, login, and my recipes.
 
@@ -24,6 +25,7 @@ const Home = () => {
             <Navigation />
             <Header />
             <Footer />
+            <SearchBar />
         </div>
     )
 };
