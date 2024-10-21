@@ -1,4 +1,11 @@
+import { jwtDecode, JwtPayload} from 'jwt-decode';
+import { UserData } from '../interfaces/userData';
+
 class AuthService {
+    // Decode the JWT token and return the user data
+    getProfile() {
+      return jwtDecode<UserData>(this.getToken());
+    }
   
     // Check if the user is logged in by retrieving the token from localStorage
     loggedIn() {
