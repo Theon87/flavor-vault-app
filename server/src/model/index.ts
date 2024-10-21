@@ -19,6 +19,16 @@ User.hasMany(Recipe, {
     foreignKey: 'userId',
     as: 'user', // Alias for accessing the recipe's user
   });
+  // 2. A User can have many Grocery List Items (One-to-Many)
+User.hasMany(GroceryList, {
+    foreignKey: 'userId',
+    as: 'groceryLists',
+    onDelete: 'CASCADE',
+  });
+  GroceryList.belongsTo(User, {
+    foreignKey: 'userId',
+    as: 'user',
+  });
 
 
 
