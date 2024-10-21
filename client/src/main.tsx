@@ -14,6 +14,8 @@ import './index.css'
 import ErrorPage from './pages/ErrorPage.tsx';
 import Home from './pages/home.tsx';
 import Login from './pages/Login.tsx';
+import myRecipes from './pages/my-recipes.tsx';
+
 
 
 const router = createBrowserRouter([
