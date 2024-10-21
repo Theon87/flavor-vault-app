@@ -27,7 +27,7 @@ const SearchBar = () => {
             <form onSubmit={handleSubmit} className='flex border-2 border-green-600 rounded-full px-4 py-2 text-lg'>
               <input type="text" className=' w-full bg-transparent outline-none search-bar' placeholder='Search Recipe...' value={query} onChange={(e) => setQuery(e.target.value)} required />
             </form>
-            <Button variant="filled">Search</Button>
+            <Button className="flex w-max gap-4" variant="filled">Search</Button>
           </div>
         </div>
       </div>
