@@ -9,17 +9,15 @@ const router = Router();  // Initialize the router
 router.post('/login', async (req: Request, res: Response) => {
   try {
     const { username, password } = req.body;  // Extract username and password from request body
-    
+
         // Check if both username and password are provided
         if (!username || !password) {
           return res.status(400).json({ message: 'Username and password are required' });
         }
 
-  // Find the user in the database by username
-  const user = await User.findOne({
-    where: { username },
-  });
-
+ // Find the user in the database by username
+ const user = await User.findOne({ where: { username } });
+ 
   // If user is not found, send an authentication failed response
   if (!user) {
     return res.status(401).json({ message: 'Authentication failed' });
