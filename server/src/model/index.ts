@@ -9,15 +9,19 @@ const User = UserFactory(sequelize);
 const GroceryList = GroceryListFactory(sequelize); // Initialize GroceryList
 
 // Create associations between the models
-User.hasOne(GroceryList, {
-    onDelete: 'CASCADE',
-});
-
-Recipe.belongsTo(User);
-
+// 1. A User can have many Recipes (One-to-Many)
 User.hasMany(Recipe, {
-    onDelete: 'CASCADE',
-});
+    foreignKey: 'userId',
+    as: 'recipes', // Alias for accessing related recipes
+    onDelete: 'CASCADE', // Delete the user's recipes if the user is deleted
+  });
+  Recipe.belongsTo(User, {
+    foreignKey: 'userId',
+    as: 'user', // Alias for accessing the recipe's user
+  });
+
+
+
 
 export { Recipe, User, GroceryList }; // Export the GroceryList model
 
