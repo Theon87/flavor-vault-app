@@ -58,6 +58,27 @@ const Home: React.FC = () => {
             <main>
             <h2>Welcome to Flavor Vault!</h2>
             <p>Discover and share amazing recipes.</p>
+            <input 
+                    type="text" 
+                    placeholder="Search for recipes..." 
+                    value={searchTerm}
+                    onChange={handleSearch} 
+                />
+
+                <div className="recipe-list">
+                    {filteredRecipes.length > 0 ? (
+                        filteredRecipes.map(recipe => (
+                            <div key={recipe.id} className="recipe-item">
+                                <Link to={`/recipe/${recipe.id}`}>
+                                    <h3>{recipe.title}</h3>
+                                    <p>{recipe.description}</p>
+                                </Link>
+                            </div>
+                        ))
+                    ) : (
+                        <p>No recipes found.</p>
+                    )}
+                </div>
             </main>
             <footer>
             <p>&copy; 2024 My Recipe App</p>
