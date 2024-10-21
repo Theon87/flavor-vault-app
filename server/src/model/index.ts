@@ -29,6 +29,17 @@ User.hasMany(GroceryList, {
     foreignKey: 'userId',
     as: 'user',
   });
+  // 3. A Recipe can belong to many Grocery List Items (Many-to-Many)
+Recipe.belongsToMany(GroceryList, {
+    through: 'RecipeGroceryList', // This will create a join table 'RecipeGroceryList'
+    foreignKey: 'recipeId',
+    as: 'groceryLists', // Alias for accessing related grocery lists
+  });
+  GroceryList.belongsToMany(Recipe, {
+    through: 'RecipeGroceryList',
+    foreignKey: 'groceryListId',
+    as: 'recipes',
+  });
 
 
 
