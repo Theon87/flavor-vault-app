@@ -16,6 +16,21 @@ const Home: React.FC = () => {
     const [searchTerm, setSearchTerm] = useState('');
     const [recipes, setRecipes] = useState([]);
     const [filteredRecipes, setFilteredRecipes] = useState([]);
+     // Fetch recipes from API (replace with your API endpoint)
+     useEffect(() => {
+        const fetchRecipes = async () => {
+            try {
+                const response = await fetch('/api/recipes'); // Update with your API endpoint
+                const data = await response.json();
+                setRecipes(data);
+                setFilteredRecipes(data);
+            } catch (error) {
+                console.error('Error fetching recipes:', error);
+            }
+        };
+
+        fetchRecipes();
+    }, []);
     return (
         <div>
             <header> 
