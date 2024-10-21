@@ -17,6 +17,13 @@ const Home: React.FC = () => {
         <div>
             <header>
                 <h1>Flavor Vault</h1>
+                <nav>
+                    <ul>
+                        <li><Link to="/">Home</Link></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </nav>
             </header>
         </div>
     )
