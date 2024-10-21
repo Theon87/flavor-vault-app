@@ -25,10 +25,14 @@ const Home: React.FC = () => {
                     </ul>
                 </nav>
             </header>
+
             <main>
             <h2>Welcome to Flavor Vault!</h2>
             <p>Discover and share amazing recipes.</p>
             </main>
+            <footer>
+            <p>&copy; 2024 My Recipe App</p>
+            </footer>
         </div>
     )
 };
