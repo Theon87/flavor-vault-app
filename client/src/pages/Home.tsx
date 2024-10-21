@@ -34,6 +34,6 @@ const Home: React.FC = () => {
             <p>&copy; 2024 My Recipe App</p>
             </footer>
         </div>
-    )
+    );
 };
 export default Home;
