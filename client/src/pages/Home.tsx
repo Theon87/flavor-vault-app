@@ -1,7 +1,7 @@
 //app/client/src/pages/home.tsx
 //This willl be our home page
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 //We will need a header, a nav bar containg home, login, and my recipes.
 
 //We will need a search bar to search for recipes on the page.
