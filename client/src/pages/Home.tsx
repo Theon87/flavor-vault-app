@@ -31,6 +31,17 @@ const Home: React.FC = () => {
 
         fetchRecipes();
     }, []);
+     // Handle search input
+     const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
+        const value = event.target.value;
+        setSearchTerm(value);
+
+        // Filter recipes based on search term
+        const filtered = recipes.filter(recipe =>
+            recipe.title.toLowerCase().includes(value.toLowerCase())
+        );
+        setFilteredRecipes(filtered);
+    };
     return (
         <div>
             <header> 
