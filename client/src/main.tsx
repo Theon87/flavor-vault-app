@@ -1,22 +1,14 @@
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-// import { StrictMode } from 'react'
-// import { createRoot } from 'react-dom/client'
-import App from './App.tsx'
-import './index.css'
-
-// createRoot(document.getElementById('root')!).render(
-//   <StrictMode>
-//     <App />
-//   </StrictMode>,
-// )
+import App from './App.tsx';
+import './index.css';
 
 
 import ErrorPage from './pages/ErrorPage.tsx';
 import Home from './pages/Home.tsx';
 import Login from './pages/Login.tsx';
 
-// import myRecipe from './pages/my-recipes.tsx';
+import MyRecipes from './pages/MyRecipes.tsx';
 
 const router = createBrowserRouter([
   {
@@ -34,7 +26,7 @@ const router = createBrowserRouter([
       }, 
       {
         path: '/my-recipes',
-        element: <UserRecipes />
+        element: <MyRecipes />
       }
     ]
   }
