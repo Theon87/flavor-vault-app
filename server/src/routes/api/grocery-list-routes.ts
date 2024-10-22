@@ -15,7 +15,6 @@ router.get('/', async (_req: Request, res: Response) => {
   }
 });
 
-// Optional: Additional routes can be added here, like POST, PUT, DELETE
 
 export { router as groceryListRouter }; // Export the router
 
