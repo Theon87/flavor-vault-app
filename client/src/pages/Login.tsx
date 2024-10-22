@@ -37,6 +37,7 @@ const Login = () => {
 
   return (
     <>
+    <Navigation />
       {/*
         This example requires updating your template:
 
