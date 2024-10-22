@@ -26,9 +26,9 @@ router.get('/:id', async (req: Request, res: Response) => {
       return res.status(404).json({ message: 'Recipe not found'});
     }
     console.log(`GET /recipes/${id} - Recipe Retrieved`, recipe);
-    res.json(recipe);
+    return res.json(recipe);
   } catch (error: any) {
-    res.status(500).json({ message: error.message });
+    return res.status(500).json({ message: error.message });
   }
 });
 
@@ -58,9 +58,9 @@ router.put('/:id', async (req: Request, res: Response) => {
     }
     await recipe.update({ name, prepTime, ingredients, instructions, userId });
     console.log(`PUT /recipes/:id - Recipe updated: `, recipe);
-    res.json(recipe);
+    return res.json(recipe);
   } catch(error: any) {
-    res.status(500).json({ message: error.message});
+    return res.status(500).json({ message: error.message});
   }
 });
 
@@ -76,9 +76,9 @@ router.delete('/:id', async (req: Request, res: Response) => {
 
     await recipe.destroy();
     console.log(`DELETE /recipes/:id - Recipe Deleted:`, recipe);
-    res.json({ message: 'Recipe deleted successfully' });
+    return res.json({ message: 'Recipe deleted successfully' });
   } catch (error: any) {
-    res.status(500).json({ message: error.message });
+    return res.status(500).json({ message: error.message });
   }
 });
 
