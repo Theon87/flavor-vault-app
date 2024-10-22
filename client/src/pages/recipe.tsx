@@ -7,3 +7,34 @@
 // We will need to have a button that will allow the user to save the recipe to their profile.
 
 // Finally we'll need the footer
+
+//     return (
+//         <div>
+
+//             <main>
+//             <input 
+//                     type="text" 
+//                     placeholder="Search for recipes..." 
+//                     value={searchTerm}
+//                     onChange={handleSearch} 
+//                 />
+
+//                 <div className="recipe-list">
+//                     {filteredRecipes.length > 0 ? (
+//                         filteredRecipes.map(recipe => (
+//                             <div key={recipe.id} className="recipe-item">
+//                                 <Link to={`/recipe/${recipe.id}`}>
+//                                     <h3>{recipe.title}</h3>
+//                                     <p>{recipe.description}</p>
+//                                 </Link>
+//                             </div>
+//                         ))
+//                     ) : (
+//                         <p>No recipes found.</p>
+//                     )}
+//                 </div>
+//             </main>
+//             
+//         </div>
+//     );
+// };
