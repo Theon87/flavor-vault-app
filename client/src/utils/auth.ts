@@ -1,11 +1,11 @@
-import { jwtDecode, JwtPayload} from 'jwt-decode';
-import { UserData } from '../interfaces/userData';
+// import { jwtDecode, JwtPayload} from 'jwt-decode';
+// import { UserData } from '../interfaces/userData';
 
 class AuthService {
     // Decode the JWT token and return the user data
-    getProfile() {
-      return jwtDecode<UserData>(this.getToken());
-    }
+    // getProfile() {
+    //   return jwtDecode<UserData>(this.getToken());
+    // }
   
     // Check if the user is logged in by retrieving the token from localStorage
     loggedIn() {
@@ -13,15 +13,15 @@ class AuthService {
       return token;
     }
 
-    isTokenExpired(token: string) {
-      //checks if the token is expired and returns a boolean value
-      const decoded = jwtDecode<JwtPayload>(token);
-      if (decoded?.exp && decoded?.exp < Date.now() / 1000) {
-        return true;
-      } else {
-        return false;
-      }
-    }
+    // isTokenExpired(token: string) {
+    //   //checks if the token is expired and returns a boolean value
+    //   const decoded = jwtDecode<JwtPayload>(token);
+    //   if (decoded?.exp && decoded?.exp < Date.now() / 1000) {
+    //     return true;
+    //   } else {
+    //     return false;
+    //   }
+    // }
   
     // Retrieve the JWT token from localStorage
     getToken(): string {
