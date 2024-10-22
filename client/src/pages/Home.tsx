@@ -1,7 +1,4 @@
-
-import { useState, useEffect, useLayoutEffect } from "react";
-import { retrieveUsers } from "../api/userAPI";
-import type { UserData } from "../interfaces/userData";
+import { useState, useEffect } from "react";
 import auth from "../utils/auth";
 import Navigation from '../components/Navigation';
 import Header from '../components/Header';
@@ -11,61 +8,53 @@ import SearchBar from '../components/SearchBar';
 import RecipeCard from '../components/RecipeCard';
 import ErrorPage from './ErrorPage';
 
-
 const Home = () => {
-    const [users, setUsers] = useState<UserData[]>([]);
     const [error, setError] = useState(false);
-    const [loginCheck, setLoginCheck] = useState(false);
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        if (loginCheck) {
-            fetchUsers();
-        }
-    }, [loginCheck]);
+        const checkLogin = async () => {
+            try {
+                if (auth.loggedIn()) {
+                    setIsLoggedIn(true);
+                }
+                setLoading(false);
+            } catch (error) {
+                console.error("Login check failed:", error);
+                setError(true);
+                setLoading(false);
+            }
+        };
 
-    useLayoutEffect(() => {
         checkLogin();
     }, []);
 
-    const checkLogin = () => {
-        if (auth.loggedIn()) {
-            setLoginCheck(true);
-        }
-    };
-
-    const fetchUsers = async () => {
-        try {
-            const data = await retrieveUsers();
-            setUsers(data)
-        } catch (err) {
-            console.error('Failed to retrieve users:', err);
-            setError(true);
-        }
+    if (loading) {
+        return <div>Loading...</div>;
     }
 
     if (error) {
         return <ErrorPage />;
     }
+
+    if (!isLoggedIn) {
+        return (
+            <div>
+                <h1>Please login to view recipes</h1>
+            </div>
+        );
+    }
+
     return (
         <div>
-            {
-                !loginCheck ? (
-                    <div>
-                        <h1>Please login to view recipes</h1>
-                    </div>
-                ) : (
-                    <div>
-                        <Navigation />
-                        <Header />
-                        <SearchBar />
-                        <RecipeCard />
-                        <Footer />
-                    </div>
-                        
-                )}
+            <Navigation />
+            <Header />
+            <SearchBar />
+            <RecipeCard />
+            <Footer />
         </div>
-            
-    )
+    );
 };
 
 export default Home;
