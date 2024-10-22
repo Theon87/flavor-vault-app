@@ -55,10 +55,11 @@ const MyRecipes = () => {
       <div>
         <main>
           <div className="overlay">
-            <div className="container px-5 py-24 mx-auto text-black">
+            <div className="container px-5 py-24 mx-auto text-white">
               <p className="text-center mb-5 text-md-">
-                Discover amazing recipes and learn how to make them. If you like
-                a recipe, just add it to your favorites!
+                Here is where your saved recipes will be displayed. You can
+                search for a recipe by typing in the search bar below. Just
+                click on it to view the details!
               </p>
 
               <div className="w-full lg:w-2/3 mx-auto">
