@@ -3,7 +3,6 @@ import {
   Card,
   CardHeader,
   CardBody,
-  CardFooter,
   Typography,
   Button,
 } from "@material-tailwind/react";
@@ -16,29 +15,28 @@ const saveRecipe = () => {
 };
 
 return (
-  <Card className="mt-6 w-96">
-    <CardHeader color="blue-gray" className="relative h-56">
-      <img
-        src="https://img.spoonacular.com/recipes/716429-556x370.jpg"
-        alt="Pasta with Garlic, Scallions, Cauliflower & Breadcrumbs"
-      />
+  <Card className="max-w-sm mx-auto rounded overflow-hidden shadow-lg bg-white p-6 mt-6">
+  <img
+    src="https://img.spoonacular.com/recipes/716429-556x370.jpg"
+    alt="Pasta with Garlic, Scallions, Cauliflower & Breadcrumbs"
+  />
+    <CardHeader color="black" className="relative h-56">
+    Pasta with Garlic, Scallions, Cauliflower & Breadcrumbs
+    <br></br>
+    <Typography variant="h5" color="blue-gray" className="mb-2">
+      Discover mouthwatering Pasta recipes.
+      </Typography>
     </CardHeader>
-    <CardBody>
-      <Typography variant="h5" color="blue-gray" className="mb-2">
-        Pasta with Garlic, Scallions, Cauliflower & Breadcrumbs
-      </Typography>
-      <Typography>
-        Discover mouthwatering Pasta recipes.
-      </Typography>
-    </CardBody>
-    <CardFooter className="pt-0 flex justify-between">
+
+    <CardBody className="pt-0 flex justify-between">
       {/* Save Button */}
       <Button color="green" onClick={saveRecipe}>
         Save
       </Button>
       {/* Read More Button */}
       <Button color="blue">Read More</Button>
-    </CardFooter>
+    </CardBody>
+
   </Card>
 );
 };
