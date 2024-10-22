@@ -38,21 +38,8 @@ const Login = () => {
   return (
     <>
     <Navigation />
-      {/*
-        This example requires updating your template:
-
-        ```
-        <html class="h-full bg-white">
-        <body class="h-full">
-        ```
-      */}
       <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-          <img
-            alt="Flavor Vault"
-            src="./flavor-vault-logo.png"
-            className="mx-auto h-10 w-auto"
-          />
           <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
             Sign in to your account
           </h2>
@@ -62,7 +49,7 @@ const Login = () => {
           <form action="#" method="POST" className="space-y-6" onSubmit={handleSubmit}>
             <div>
               <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
-                Email address
+                Username
               </label>
               <div className="mt-2">
                 <input
@@ -120,39 +107,6 @@ const Login = () => {
         </div>
       </div>
     </>
-
-
-    // <div className='form-container'>
-    //   <form className='form login-form' onSubmit={handleSubmit}>
-    //     <h1>Login</h1>
-    //     {/* Username input field */}
-    //     <div className="form-group">
-    //       <label>Username</label>
-    //       <input 
-    //         className="form-input"
-    //         type='text'
-    //         name='username'
-    //         value={loginData.username || ''}
-    //         onChange={handleChange}
-    //       />
-    //     </div>
-    //     {/* Password input field */}
-    //     <div className="form-group">
-    //       <label>Password</label>
-    //       <input 
-    //         className="form-input"
-    //         type='password'
-    //         name='password'
-    //         value={loginData.password || ''}
-    //         onChange={handleChange}
-    //       />
-    //     </div>
-    //     {/* Submit button for the login form */}
-    //     <div className="form-group">
-    //       <button className="btn btn-primary" type='submit'>Login</button>
-    //     </div>
-    //   </form>
-    // </div>
   )
 };
 
