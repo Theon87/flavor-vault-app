@@ -58,7 +58,25 @@ router.put('/:id', async (req: Request, res: Response) => {
     await groceryItem.update({ itemName, quantity, userId });
     console.log(`PUT /grocery-list/${id} - Item Updated`);
     res.json(groceryItem);
-    
+
+  } catch (error: any) {
+    res.status(500).json({ message: error.message });
+  }
+});
+
+// DELETE /api/grocery-list/:id - delete an existing grocery list item
+router.delete('/:id', async (req: Request, res: Response) => {
+  try {
+    const { id } = req.params;
+
+    const groceryItem = await GroceryList.findByPk(id);
+    if (!groceryItem) {
+      return res.status(404).json({ message: 'Item not found' });
+    }
+
+    await groceryItem.destroy();
+    console.log(`DELETE /grocery-list/${id} - Item Deleted`);
+    res.json({ message: 'Item deleted successfully' });
   } catch (error: any) {
     res.status(500).json({ message: error.message });
   }
