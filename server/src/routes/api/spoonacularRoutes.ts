@@ -1,17 +1,18 @@
 import express from 'express';
 import type { Request, Response } from 'express';
+import { Recipe } from '../../model/index';
 
 
 const router = express.Router();
 
-// GET api/recipes- Get all grocery list items
+// GET api/recipes- Get all recipe items
 router.get('/recipes', async (_req: Request, res: Response) => {
-  const { query } = req.body;
   try {
-    const recipe = await Recipes.findAll(); // Fetch recipe from api
+    const recipes = await Recipe.findAll(); // Fetch recipe from api
     console.log('GET /recipes'); // Log the request
-    res.json(query); // Respond with the recipe
+    res.json(recipes); // Respond with the recipe
   } catch (error: any) {
+    console.error('Error fetching recipes: ', error);
     res.status(500).json({ message: error.message }); // Handle errors
   }
 });

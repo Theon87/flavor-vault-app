@@ -11,12 +11,12 @@ interface Recipe {
   description: string;
 }
 
-const URL = `https://api.spoonacular.com/recipes/complexSearch`;
 
 const MyRecipes = () => {
   const [searchTerm, setSearchTerm] = useState(""); // user's search input.
   const [recipes, setRecipes] = useState<Recipe[]>([]); //recipes array to store all the fetched recipes from the API.
   const [filteredRecipes, setFilteredRecipes] = useState<Recipe[]>([]); //filteredRecipes: An array to store recipes that match the search term. Initially, it can be set to an empty array.
+  const URL = `https://api.spoonacular.com/recipes/complexSearch`;
   //The useState hook initializes these pieces of state.
   // Fetch recipes from API
   useEffect(() => {
