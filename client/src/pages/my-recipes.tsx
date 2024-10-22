@@ -22,15 +22,15 @@ interface Recipe {
 }
 
 const myRecipes = () => {
-    const [searchTerm, setSearchTerm] = useState(''); //searchTerm: A string to hold the user's search input.
-    const [recipes, setRecipes] = useState<Recipe[]>([]); //recipes: An array to store all the fetched recipes from the API.
+    const [searchTerm, setSearchTerm] = useState(''); // user's search input.
+    const [recipes, setRecipes] = useState<Recipe[]>([]); //recipes array to store all the fetched recipes from the API.
     const [filteredRecipes, setFilteredRecipes] = useState<Recipe[]>([]); //filteredRecipes: An array to store recipes that match the search term. Initially, it can be set to an empty array.
     //The useState hook initializes these pieces of state. 
-    // Fetch recipes from API (replace with your API endpoint)
+    // Fetch recipes from API
     useEffect(() => {
         const fetchRecipes = async () => {
             try {
-                const response = await fetch('/api/recipes'); // Update with your API endpoint
+                const response = await fetch('/api/recipes'); // Update with correct API endpoint
                 const data = await response.json();
                 setRecipes(data);
                 setFilteredRecipes(data);
