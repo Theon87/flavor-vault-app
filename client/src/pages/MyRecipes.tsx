@@ -55,7 +55,7 @@ const MyRecipes = () => {
       <div>
         <main>
           <div className="overlay">
-            <div className="container px-5 py-24 mx-auto text-white">
+            <div className="container px-5 py-24 mx-auto text-dark-grey">
               <p className="text-center mb-5 text-md-">
                 Here is where your saved recipes will be displayed. You can
                 search for a recipe by typing in the search bar below. Just
