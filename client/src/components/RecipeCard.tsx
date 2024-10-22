@@ -22,6 +22,7 @@ return (
         src="https://img.spoonacular.com/recipes/716429-556x370.jpg"
         alt="Pasta with Garlic, Scallions, Cauliflower & Breadcrumbs"
       />
+      <br />
     </CardHeader>
     <CardBody>
       <Typography variant="h5" color="blue-gray" className="mb-2">
