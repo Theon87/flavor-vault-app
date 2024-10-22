@@ -43,6 +43,12 @@ const MyRecipes = () => {
     setFilteredRecipes(filtered);
   };
 
+  // Handle form submit
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    // You can add any additional logic here if needed
+  };
+
   return (
     <div>
       <Navigation />
@@ -64,8 +70,8 @@ const MyRecipes = () => {
                     type="text"
                     className=" w-full bg-transparent outline-none search-bar"
                     placeholder="Search Recipe..."
-                    value={query}
-                    onChange={(e) => setQuery(e.target.value)}
+                    value={searchTerm}
+                    onChange={handleSearch}
                     required
                   />
                   <Button className="flex w-max gap-4" variant="filled">
