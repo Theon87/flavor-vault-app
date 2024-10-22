@@ -1,7 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import Navigation from "../components/Navigation";
 
 // Define a Recipe interface
 interface Recipe {
@@ -44,32 +43,29 @@ const MyRecipes = () => {
 
   return (
     <div>
-      <Navigation />
-      <div>
-        <main>
-          <input
-            type="text"
-            placeholder="Search for recipes..."
-            value={searchTerm}
-            onChange={handleSearch}
-          />
+      <main>
+        <input
+          type="text"
+          placeholder="Search for recipes..."
+          value={searchTerm}
+          onChange={handleSearch}
+        />
 
-          <div className="recipe-list">
-            {filteredRecipes.length > 0 ? (
-              filteredRecipes.map((recipe) => (
-                <div key={recipe.id} className="recipe-item">
-                  <Link to={`/my-recipe/${recipe.id}`}>
-                    <h3>{recipe.title}</h3>
-                    <p>{recipe.description}</p>
-                  </Link>
-                </div>
-              ))
-            ) : (
-              <p>No recipes found.</p>
-            )}
-          </div>
-        </main>
-      </div>
+        <div className="recipe-list">
+          {filteredRecipes.length > 0 ? (
+            filteredRecipes.map((recipe) => (
+              <div key={recipe.id} className="recipe-item">
+                <Link to={`/my-recipe/${recipe.id}`}>
+                  <h3>{recipe.title}</h3>
+                  <p>{recipe.description}</p>
+                </Link>
+              </div>
+            ))
+          ) : (
+            <p>No recipes found.</p>
+          )}
+        </div>
+      </main>
     </div>
   );
 };
