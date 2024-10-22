@@ -18,4 +18,18 @@ router.get('/', async (_req: Request, res: Response) => {
 
 
 
+// POST /api/recipes - Create a new recipe
+router.post('/', async (req: Request, res: Response) => {
+  try {
+    const { name, ingredients, instructions } = req.body;
+    const newRecipe = await Recipe.create(
+       { name, ingredients, instructions });
+       console.log('POST /recipes - New Recipe Created: ', newRecipe);
+       res.status(201).json(newRecipe);
+
+  } catch (error: any) {
+    res.status(500).json({ message: error.message });
+  }
+});
+
 export { router as myRecipesRouter };
