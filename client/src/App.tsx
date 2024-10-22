@@ -1,7 +1,7 @@
 // import { useState } from 'react'
 // import react from 'react'
-import './index.css'
-import Home from './pages/Home.tsx';
+import { Outlet } from 'react-router-dom';
+import './index.css';
 
 function App() {
   
@@ -9,7 +9,7 @@ function App() {
   return (
     <>
       <div>
-        <Home />
+        <Outlet />
       </div>
     </>
   )

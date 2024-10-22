@@ -11,7 +11,7 @@ const Navbar = () => {
     },
     {
       name:"My Recipes",
-      path:"/my-recipes"
+      path:"/recipes"
     },
     {
       name:"Login",
