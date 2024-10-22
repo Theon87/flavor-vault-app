@@ -1,8 +1,4 @@
-//app/client/src/pages/home.tsx
-//This willl be our home page
-// import React from 'react';
-// import { Link } from 'react-router-dom';
-// import { useState, useEffect } from 'react';
+
 import Navigation from '../components/Navigation';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
