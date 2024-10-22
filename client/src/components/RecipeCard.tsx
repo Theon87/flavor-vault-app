@@ -16,17 +16,18 @@ const saveRecipe = () => {
 };
 
 return (
-  <Card className="mt-6 w-96">
+  <Card className="max-w-sm rounded overflow-hidden shadow-lg">
+  <img
+    src="https://img.spoonacular.com/recipes/716429-556x370.jpg"
+    alt="Pasta with Garlic, Scallions, Cauliflower & Breadcrumbs"
+  />
     <CardHeader color="blue-gray" className="relative h-56">
-      <img
-        src="https://img.spoonacular.com/recipes/716429-556x370.jpg"
-        alt="Pasta with Garlic, Scallions, Cauliflower & Breadcrumbs"
-      />
-      <br />
+    Pasta with Garlic, Scallions, Cauliflower & Breadcrumbs
     </CardHeader>
+
     <CardBody>
       <Typography variant="h5" color="blue-gray" className="mb-2">
-        Pasta with Garlic, Scallions, Cauliflower & Breadcrumbs
+        
       </Typography>
       <Typography>
         Discover mouthwatering Pasta recipes.
