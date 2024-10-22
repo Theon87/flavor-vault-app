@@ -20,7 +20,7 @@ const MyRecipes = () => {
   useEffect(() => {
     const fetchRecipes = async () => {
       try {
-        const response = await fetch("/api/recipes"); // Update with correct API endpoint
+        const response = await fetch("https://api.spoonacular.com/recipes/complexSearch"); // Update with correct API endpoint
         const data = await response.json();
         setRecipes(data);
         setFilteredRecipes(data);
