@@ -46,4 +46,22 @@ router.post('/', async (req: Request, res: Response) => {
   }
 });
 
+//PUT api/recipes/:id - update an existing recipe
+router.put('/:id', async (req: Request, res: Response) => {
+  try {
+    const { id } = req.params;
+    const { name, prepTime, ingredients, instructions, userId } = req.body;
+
+    const recipe = await Recipe.findByPk(id);
+    if(!recipe) {
+      return res.status(404).json({ message: 'Recipe not found. '});
+    }
+    await recipe.update({ name, prepTime, ingredients, instructions, userId });
+    console.log('PUT /recipes/:id - Recipe updated: ', recipe);
+    res.json(recipe);
+  } catch(error: any) {
+    res.status(500).json({ message: error.message});
+  }
+});
+
 export { router as myRecipesRouter };
