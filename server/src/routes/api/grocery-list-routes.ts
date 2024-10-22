@@ -25,9 +25,9 @@ router.get('/:id', async (req: Request, res: Response) => {
       return res.status(404).json({ message: 'Item not found' });
     }
     console.log(`GET /grocery-list/${id} - Item Retrieved`, groceryItem);
-    res.json(groceryItem);
+    return res.json(groceryItem);
   } catch (error: any) {
-    res.status(500).json({ message: error.message });
+    return res.status(500).json({ message: error.message });
   }
 });
 
@@ -57,10 +57,10 @@ router.put('/:id', async (req: Request, res: Response) => {
 
     await groceryItem.update({ itemName, quantity, userId });
     console.log(`PUT /grocery-list/${id} - Item Updated`);
-    res.json(groceryItem);
+    return res.json(groceryItem);
 
   } catch (error: any) {
-    res.status(500).json({ message: error.message });
+    return res.status(500).json({ message: error.message });
   }
 });
 
@@ -76,9 +76,9 @@ router.delete('/:id', async (req: Request, res: Response) => {
 
     await groceryItem.destroy();
     console.log(`DELETE /grocery-list/${id} - Item Deleted`);
-    res.json({ message: 'Item deleted successfully' });
+    return res.json({ message: 'Item deleted successfully' });
   } catch (error: any) {
-    res.status(500).json({ message: error.message });
+    return res.status(500).json({ message: error.message });
   }
 });
 
