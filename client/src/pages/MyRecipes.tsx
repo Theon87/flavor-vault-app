@@ -1,6 +1,8 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import Navigation from "../components/Navigation";
+import { Button } from "@material-tailwind/react";
 
 // Define a Recipe interface
 interface Recipe {
@@ -43,29 +45,52 @@ const MyRecipes = () => {
 
   return (
     <div>
-      <main>
-        <input
-          type="text"
-          placeholder="Search for recipes..."
-          value={searchTerm}
-          onChange={handleSearch}
-        />
+      <Navigation />
+      <div>
+        <main>
+          <div className="overlay">
+            <div className="container px-5 py-24 mx-auto text-black">
+              <p className="text-center mb-5 text-md-">
+                Discover amazing recipes and learn how to make them. If you like
+                a recipe, just add it to your favorites!
+              </p>
 
-        <div className="recipe-list">
-          {filteredRecipes.length > 0 ? (
-            filteredRecipes.map((recipe) => (
-              <div key={recipe.id} className="recipe-item">
-                <Link to={`/my-recipe/${recipe.id}`}>
-                  <h3>{recipe.title}</h3>
-                  <p>{recipe.description}</p>
-                </Link>
+              <div className="w-full lg:w-2/3 mx-auto">
+                <form
+                  onSubmit={handleSubmit}
+                  className="flex border-2 border-green-600 rounded-full px-4 py-2 text-lg"
+                >
+                  <input
+                    type="text"
+                    className=" w-full bg-transparent outline-none search-bar"
+                    placeholder="Search Recipe..."
+                    value={query}
+                    onChange={(e) => setQuery(e.target.value)}
+                    required
+                  />
+                  <Button className="flex w-max gap-4" variant="filled">
+                    Search
+                  </Button>
+                </form>
+                <div className="recipe-list">
+                  {filteredRecipes.length > 0 ? (
+                    filteredRecipes.map((recipe) => (
+                      <div key={recipe.id} className="recipe-item">
+                        <Link to={`/my-recipe/${recipe.id}`}>
+                          <h3>{recipe.title}</h3>
+                          <p>{recipe.description}</p>
+                        </Link>
+                      </div>
+                    ))
+                  ) : (
+                    <p>No recipes found.</p>
+                  )}
+                </div>
               </div>
-            ))
-          ) : (
-            <p>No recipes found.</p>
-          )}
-        </div>
-      </main>
+            </div>
+          </div>
+        </main>
+      </div>
     </div>
   );
 };
