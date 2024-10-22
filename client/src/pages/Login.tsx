@@ -33,6 +33,7 @@ const Login = () => {
     } catch (err) {
       console.error("Failed to login", err); // Log any errors that occur during login
     }
+    setLoginData({ username: "", password: "" }); // Reset the form
   };
 
   return (
