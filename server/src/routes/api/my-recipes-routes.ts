@@ -8,7 +8,7 @@ const router = express.Router();
 router.get('/', async (_req: Request, res: Response) => {
   try {
     const recipes = await Recipe.findAll();
-    console.log('GET /recipes');
+    console.log(`GET /recipes`);
     res.json(recipes);
 
   } catch (error: any) {
@@ -25,7 +25,7 @@ router.get('/:id', async (req: Request, res: Response) => {
     if (!recipe) {
       return res.status(404).json({ message: 'Recipe not found'});
     }
-    console.log('GET /recipes/${id} - Recipe Retrieved', recipe);
+    console.log(`GET /recipes/${id} - Recipe Retrieved`, recipe);
     res.json(recipe);
   } catch (error: any) {
     res.status(500).json({ message: error.message });
@@ -38,7 +38,7 @@ router.post('/', async (req: Request, res: Response) => {
   const { name, prepTime, ingredients, instructions, userId } = req.body;
   try {
     const newRecipe = await Recipe.create({ name, prepTime, ingredients, instructions, userId });
-       console.log('POST /recipes - New Recipe Created: ', newRecipe);
+       console.log(`POST /recipes - New Recipe Created: `, newRecipe);
        res.status(201).json(newRecipe);
 
   } catch (error: any) {
@@ -57,7 +57,7 @@ router.put('/:id', async (req: Request, res: Response) => {
       return res.status(404).json({ message: 'Recipe not found. '});
     }
     await recipe.update({ name, prepTime, ingredients, instructions, userId });
-    console.log('PUT /recipes/:id - Recipe updated: ', recipe);
+    console.log(`PUT /recipes/:id - Recipe updated: `, recipe);
     res.json(recipe);
   } catch(error: any) {
     res.status(500).json({ message: error.message});
@@ -75,7 +75,7 @@ router.delete('/:id', async (req: Request, res: Response) => {
     }
 
     await recipe.destroy();
-    console.log('DELETE /recipes/:id - Recipe Deleted:', recipe);
+    console.log(`DELETE /recipes/:id - Recipe Deleted:`, recipe);
     res.json({ message: 'Recipe deleted successfully' });
   } catch (error: any) {
     res.status(500).json({ message: error.message });

@@ -4,7 +4,7 @@ import { Model, DataTypes, Optional, Sequelize } from "sequelize";
 interface GroceryListAttributes {
   id: number;
   itemName: string; // Name of the grocery item
-  quantity: number;  // Quantity of the grocery item
+  quantity: string;  // Quantity of the grocery item, accounting for unit
   userId: number;    // Foreign key to associate with a user
 }
 // Define the attributes required during creation (id is excluded)
@@ -17,7 +17,7 @@ export class GroceryList
 {
     public id!: number;
     public itemName!: string;
-    public quantity!: number;
+    public quantity!: string;
     public userId!: number;
   }
 
@@ -35,7 +35,7 @@ export function GroceryListFactory(sequelize: Sequelize): typeof GroceryList {
           allowNull: false,
         },
         quantity: {
-          type: DataTypes.INTEGER,
+          type: DataTypes.STRING,
           allowNull: false,
         },
         userId: {
