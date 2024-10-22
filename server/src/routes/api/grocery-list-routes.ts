@@ -38,6 +38,26 @@ router.post('/', async (req: Request, res: Response) => {
     const newItem = await GroceryList.create({ id, itemName, quantity, userId });
     console.log(`POST /grocery-list - New Item Created: `, newItem);
     res.status(201).json(newItem);
+
+  } catch (error: any) {
+    res.status(500).json({ message: error.message });
+  }
+});
+
+// PUT /api/grocery-list/:id - Update an existing grocery list item
+router.put('/:id', async (req: Request, res: Response) => {
+  try {
+    const { id } = req.params;
+    const { itemName, quantity, userId} = req.body;
+
+    const groceryItem = await GroceryList.findByPk(id);
+    if (!groceryItem) {
+      return res.status(404).json({ message: 'Item not found' });
+    }
+
+    await groceryItem.update({ itemName, quantity, userId });
+    console.log(`PUT /grocery-list/${id} - Item Updated`);
+    res.json(groceryItem);
     
   } catch (error: any) {
     res.status(500).json({ message: error.message });
