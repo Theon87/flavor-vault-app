@@ -64,4 +64,22 @@ router.put('/:id', async (req: Request, res: Response) => {
   }
 });
 
+//DELETE /api/recipes/:id - delete existing recipe
+router.delete('/:id', async (req: Request, res: Response) => {
+  try {
+    const { id } = req.params;
+
+    const recipe = await Recipe.findByPk(id);
+    if (!recipe) {
+      return res.status(404).json({ message: 'Recipe not found' });
+    }
+
+    await recipe.destroy();
+    console.log('DELETE /recipes/:id - Recipe Deleted:', recipe);
+    res.json({ message: 'Recipe deleted successfully' });
+  } catch (error: any) {
+    res.status(500).json({ message: error.message });
+  }
+});
+
 export { router as myRecipesRouter };
