@@ -1,5 +1,5 @@
 import { useState, FormEvent, ChangeEvent } from "react";
-import navigation from "../components/Navigation";
+import Navigation from "../components/Navigation";
 import Auth from "../utils/auth"; // Import the Auth utility for managing authentication state
 import { login } from "../api/authAPI"; // Import the login function from the API
 import { UserLogin } from "../interfaces/userLogin"; // Import the interface for UserLogin
@@ -36,38 +36,41 @@ const Login = () => {
   };
 
   return (
-    <div className="form-container">
-      <form className="form login-form" onSubmit={handleSubmit}>
-        <h1>Login</h1>
-        {/* Username input field */}
-        <div className="form-group">
-          <label>Username</label>
-          <input
-            className="form-input"
-            type="text"
-            name="username"
-            value={loginData.username || ""}
-            onChange={handleChange}
-          />
-        </div>
-        {/* Password input field */}
-        <div className="form-group">
-          <label>Password</label>
-          <input
-            className="form-input"
-            type="password"
-            name="password"
-            value={loginData.password || ""}
-            onChange={handleChange}
-          />
-        </div>
-        {/* Submit button for the login form */}
-        <div className="form-group">
-          <button className="btn btn-primary" type="submit">
-            Login
-          </button>
-        </div>
-      </form>
+    <div>
+      <Navigation />
+      <div className="form-container">
+        <form className="form login-form" onSubmit={handleSubmit}>
+          <h1>Login</h1>
+          {/* Username input field */}
+          <div className="form-group">
+            <label>Username</label>
+            <input
+              className="form-input"
+              type="text"
+              name="username"
+              value={loginData.username || ""}
+              onChange={handleChange}
+            />
+          </div>
+          {/* Password input field */}
+          <div className="form-group">
+            <label>Password</label>
+            <input
+              className="form-input"
+              type="password"
+              name="password"
+              value={loginData.password || ""}
+              onChange={handleChange}
+            />
+          </div>
+          {/* Submit button for the login form */}
+          <div className="form-group">
+            <button className="btn btn-primary" type="submit">
+              Login
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
   );
 };
