@@ -7,15 +7,15 @@ const router = express.Router();
 // GET api/recipes - Get all recipies
 router.get('/', async (_req: Request, res: Response) => {
   try {
-
     const recipes = await Recipe.findAll();
-    res.json(recipes);
     console.log('GET /recipes');
-    res.json({ message: 'GET /recipes' });
+    res.json(recipes);
 
   } catch (error: any) {
     res.status(500).json({ message: error.message });
   }
 });
+
+
 
 export { router as myRecipesRouter };
