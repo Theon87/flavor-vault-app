@@ -12,23 +12,23 @@ const GroceryList = GroceryListFactory(sequelize);
 
 // 1. A User can have many Recipes (One-to-Many)
 User.hasMany(Recipe, {
-  foreignKey: "userId",
+  foreignKey: { name: "userId", allowNull: false },
   as: "recipes", // Alias for accessing related recipes
   onDelete: "CASCADE", // Delete the user's recipes if the user is deleted
 });
 Recipe.belongsTo(User, {
-  foreignKey: "userId",
+  foreignKey: { name: "userId", allowNull: false },
   as: "user", // Alias for accessing the recipe's user
 });
 
 // 2. A User can have many Grocery List Items (One-to-Many)
 User.hasMany(GroceryList, {
-  foreignKey: "userId",
+  foreignKey: { name: "userId", allowNull: false },
   as: "groceryLists",
   onDelete: "CASCADE",
 });
 GroceryList.belongsTo(User, {
-  foreignKey: "userId",
+  foreignKey: { name: "userId", allowNull: false },
   as: "user",
 });
 
