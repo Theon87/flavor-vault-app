@@ -1,5 +1,5 @@
 import { useState, FormEvent, ChangeEvent } from "react";
-import Navigation from "../components/Navigation";
+// import Navigation from "../components/Navigation";
 import Auth from "../utils/auth"; // Import the Auth utility for managing authentication state
 import { login } from "../api/authAPI"; // Import the login function from the API
 import { UserLogin } from "../interfaces/userLogin"; // Import the interface for UserLogin
@@ -38,9 +38,9 @@ const Login = () => {
 
   return (
     <>
-      <div>
-        <Navigation />
-      </div>
+      {/* <div> */}
+        {/* <Navigation /> */}
+      {/* </div> */}
       <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
           <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
