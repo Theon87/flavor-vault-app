@@ -1,15 +1,3 @@
-// This is the page where the user can view all of their saved recipes.
-
-// We will need a header, a nav bar containing home, login, and my recipes.
-
-// We will need to display the recipes that the user has saved.
-
-// When the user clicks on a recipe we will need to display the recipe details.
-
-// We will also need to have a button to delete a recipe from the users my recipes.
-
-// Finally we'll need the footer
-
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
@@ -21,7 +9,7 @@ interface Recipe {
     description: string;
 }
 
-const myRecipes = () => {
+const MyRecipes = () => {
     const [searchTerm, setSearchTerm] = useState(''); // user's search input.
     const [recipes, setRecipes] = useState<Recipe[]>([]); //recipes array to store all the fetched recipes from the API.
     const [filteredRecipes, setFilteredRecipes] = useState<Recipe[]>([]); //filteredRecipes: An array to store recipes that match the search term. Initially, it can be set to an empty array.
@@ -81,4 +69,4 @@ const myRecipes = () => {
         </div>
     );
 };
-export default myRecipes;
+export default MyRecipes;
