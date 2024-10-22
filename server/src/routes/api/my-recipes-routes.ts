@@ -21,7 +21,7 @@ router.get('/:id', async (req: Request, res: Response) => {
   try {
     const { id } = req.params;
     //find recipe by pk (id)
-    const recipe = await Recipe.findbyPk(id);
+    const recipe = await Recipe.findByPk(id);
     if (!recipe) {
       return res.status(404).json({ message: 'Recipe not found'});
     }
@@ -35,10 +35,9 @@ router.get('/:id', async (req: Request, res: Response) => {
 
 // POST /api/recipes - Create a new recipe
 router.post('/', async (req: Request, res: Response) => {
+  const { name, prepTime, ingredients, instructions, userId } = req.body;
   try {
-    const { name, ingredients, instructions } = req.body;
-    const newRecipe = await Recipe.create(
-       { name, ingredients, instructions });
+    const newRecipe = await Recipe.create({ name, prepTime, ingredients, instructions, userId });
        console.log('POST /recipes - New Recipe Created: ', newRecipe);
        res.status(201).json(newRecipe);
 
