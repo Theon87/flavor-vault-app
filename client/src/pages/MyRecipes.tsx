@@ -11,6 +11,8 @@ interface Recipe {
   description: string;
 }
 
+const URL = `https://api.spoonacular.com/recipes/complexSearch`;
+
 const MyRecipes = () => {
   const [searchTerm, setSearchTerm] = useState(""); // user's search input.
   const [recipes, setRecipes] = useState<Recipe[]>([]); //recipes array to store all the fetched recipes from the API.
@@ -20,8 +22,9 @@ const MyRecipes = () => {
   useEffect(() => {
     const fetchRecipes = async () => {
       try {
-        const response = await fetch("https://api.spoonacular.com/recipes/complexSearch"); // Update with correct API endpoint
+        const response = await fetch(URL); // Update with correct API endpoint
         const data = await response.json();
+        console.log(response);
         setRecipes(data);
         setFilteredRecipes(data);
       } catch (error) {
