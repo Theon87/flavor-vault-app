@@ -35,7 +35,10 @@ const SearchBar = () => {
                 onChange={(e) => setQuery(e.target.value)}
                 required
               />
-              <Button className="flex w-max gap-4" variant="filled">
+              <Button
+                className="flex w-max gap-4 text-dark-grey"
+                variant="filled"
+              >
                 Search
               </Button>
             </form>
