@@ -29,17 +29,15 @@ return (
       </Typography>
     </CardHeader>
 
-    <CardBody>
-
-    </CardBody>
-    <CardFooter className="pt-0 flex justify-between">
+    <CardBody className="pt-0 flex justify-between">
       {/* Save Button */}
       <Button color="green" onClick={saveRecipe}>
         Save
       </Button>
       {/* Read More Button */}
       <Button color="blue">Read More</Button>
-    </CardFooter>
+    </CardBody>
+
   </Card>
 );
 };
