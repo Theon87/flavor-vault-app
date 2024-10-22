@@ -31,6 +31,20 @@ router.get('/:id', async (req: Request, res: Response) => {
   }
 });
 
+// POST /api/grocery-list - Create a new grocery list item
+router.post('/', async (req: Request, res: Response) => {
+  const { id, itemName, quantity, userId } = req.body; //follows GroceryListAttributes interface
+  try {
+    const newItem = await GroceryList.create({ id, itemName, quantity, userId });
+    console.log(`POST /grocery-list - New Item Created: `, newItem);
+    res.status(201).json(newItem);
+    
+  } catch (error: any) {
+    res.status(500).json({ message: error.message });
+  }
+});
+
+
 export { router as groceryListRouter }; // Export the router
 
 
