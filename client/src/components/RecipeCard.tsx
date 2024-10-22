@@ -15,7 +15,7 @@ const saveRecipe = () => {
 };
 
 return (
-  <Card className="max-w-sm mx-auto rounded overflow-hidden shadow-lg bg-white p-6 mt-10">
+  <Card className="max-w-sm mx-auto rounded overflow-hidden shadow-lg bg-white p-6 mt-6">
   <img
     src="https://img.spoonacular.com/recipes/716429-556x370.jpg"
     alt="Pasta with Garlic, Scallions, Cauliflower & Breadcrumbs"
