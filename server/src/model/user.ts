@@ -13,7 +13,10 @@ interface UserAttributes {
 interface UserCreationAttributes extends Optional<UserAttributes, "id"> {}
 
 // Define the Recipe model class
-export class User extends Model<UserAttributes, UserCreationAttributes> implements UserAttributes {
+export class User
+  extends Model<UserAttributes, UserCreationAttributes>
+  implements UserAttributes
+{
   public id!: number;
   public username!: string;
   public email!: string;
@@ -41,10 +44,15 @@ export function UserFactory(sequelize: Sequelize): typeof User {
       username: {
         type: DataTypes.STRING,
         allowNull: false,
+        unique: true,
       },
       email: {
         type: DataTypes.STRING,
         allowNull: false,
+        unique: true,
+        validate: {
+          isEmail: true,
+        },
       },
       password: {
         type: DataTypes.STRING,
@@ -52,7 +60,7 @@ export function UserFactory(sequelize: Sequelize): typeof User {
       },
     },
     {
-      tableName: 'users', // Name of the table in PostgreSQL
+      tableName: "users", // Name of the table in PostgreSQL
       sequelize, // The Sequelize instance that connects to PostgreSQL
       hooks: {
         // Before creating a new user, hash and set the password
@@ -65,7 +73,7 @@ export function UserFactory(sequelize: Sequelize): typeof User {
             await user.setPassword(user.password);
           }
         },
-      }
+      },
     }
   );
   return User;
