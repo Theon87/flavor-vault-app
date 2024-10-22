@@ -44,29 +44,32 @@ const MyRecipes = () => {
 
   return (
     <div>
-      <main>
-        <input
-          type="text"
-          placeholder="Search for recipes..."
-          value={searchTerm}
-          onChange={handleSearch}
-        />
+      <Navigation />
+      <div>
+        <main>
+          <input
+            type="text"
+            placeholder="Search for recipes..."
+            value={searchTerm}
+            onChange={handleSearch}
+          />
 
-        <div className="recipe-list">
-          {filteredRecipes.length > 0 ? (
-            filteredRecipes.map((recipe) => (
-              <div key={recipe.id} className="recipe-item">
-                <Link to={`/my-recipe/${recipe.id}`}>
-                  <h3>{recipe.title}</h3>
-                  <p>{recipe.description}</p>
-                </Link>
-              </div>
-            ))
-          ) : (
-            <p>No recipes found.</p>
-          )}
-        </div>
-      </main>
+          <div className="recipe-list">
+            {filteredRecipes.length > 0 ? (
+              filteredRecipes.map((recipe) => (
+                <div key={recipe.id} className="recipe-item">
+                  <Link to={`/my-recipe/${recipe.id}`}>
+                    <h3>{recipe.title}</h3>
+                    <p>{recipe.description}</p>
+                  </Link>
+                </div>
+              ))
+            ) : (
+              <p>No recipes found.</p>
+            )}
+          </div>
+        </main>
+      </div>
     </div>
   );
 };
