@@ -5,6 +5,7 @@ import Footer from '../components/Footer';
 import '../index.css';
 import SearchBar from '../components/SearchBar';
 import RecipeCard from '../components/RecipeCard';
+import auth from '../utils/auth';
 
 
 const Home = () => {
