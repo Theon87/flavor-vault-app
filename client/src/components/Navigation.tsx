@@ -13,10 +13,6 @@ const Navbar = () => {
       name:"My Recipes",
       path:"/recipes"
     },
-    {
-      name:"Login",
-      path:"/login"
-    },
   ]
 
   const [active,setActive]  = useState(0)
