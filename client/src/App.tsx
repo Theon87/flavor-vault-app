@@ -8,7 +8,11 @@ function App() {
   return (
     <>
       <div>
-        <Outlet />
+        <Navigation />
+
+        <main>
+          <Outlet />
+        </main>
       </div>
     </>
   );
