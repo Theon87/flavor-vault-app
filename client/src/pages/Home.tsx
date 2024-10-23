@@ -8,6 +8,19 @@ import RecipeCard from '../components/RecipeCard';
 
 
 const Home = () => {
+    const [loginCheck, setLoginCheck] = useState(false);
+
+    const checkLogin = () => {
+        if (auth.loggedIn()) {
+          setLoginCheck(true);  // Set loginCheck to true if user is logged in
+        }
+      };
+
+    useEffect(() => {
+        checkLogin();
+    }, []);
+
+
     return (
         <div>
             <Navigation />
