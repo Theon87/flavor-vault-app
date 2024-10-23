@@ -6,6 +6,8 @@ import '../index.css';
 import SearchBar from '../components/SearchBar';
 import RecipeCard from '../components/RecipeCard';
 import auth from '../utils/auth';
+import Login from './Login';
+import { useState, useEffect } from 'react';
 
 
 const Home = () => {
@@ -19,17 +21,27 @@ const Home = () => {
 
     useEffect(() => {
         checkLogin();
-    }, []);
+    }, [loginCheck]);
 
 
     return (
-        <div>
-            <Navigation />
-            <Header />
-            <SearchBar />
-            <RecipeCard />
-            <Footer />
-        </div>
+        <>
+            {!loginCheck ? (
+                <div>
+                    <h1>Welcome to Flavor Vault!</h1>
+                    <Login />
+                </div>
+            ) : (
+                <div>
+                <Navigation />
+                <Header />
+                <SearchBar />
+                <RecipeCard />
+                <Footer />
+                </div>
+            )
+            }
+        </>        
     )
 };
 
