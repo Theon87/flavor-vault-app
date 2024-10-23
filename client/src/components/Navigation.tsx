@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import logo from '../assets/images/flavor-vault-logo.png'
 import '../index.css';
+import auth from '../utils/auth';
 
 const Navbar = () => {
   const links = [
@@ -19,7 +20,7 @@ const Navbar = () => {
   return (
     <header>
       <div className="container mx-auto flex flex-wrap px-5 py-3 flex-col md:flex-row items-center">
-        <Link className="flex  items-center mb-4 md:mb-0" to={"/"}>
+        <Link className="flex  items-left mb-4 md:mb-0" to={"/"}>
           <img src={ logo } alt="logo" width={50}/>
         </Link>
       <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">
@@ -28,6 +29,7 @@ const Navbar = () => {
         return  <Link className={`mr-5 ${active==index ? 'border-b-2 border-green-500':''}`} onClick={()=>setActive(index)} to={link.path} key={index} >{link.name}</Link>
         })
         }
+        <button className={'border-b-2'} onClick= {()=> {auth.logout();}}>Logout</button>
     
       </nav>
     
