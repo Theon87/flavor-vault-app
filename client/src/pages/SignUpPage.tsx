@@ -1,14 +1,15 @@
 import { useState, FormEvent, ChangeEvent } from "react";
 // import { UserData } from "../interfaces/userData";
+import { newUser } from "../interfaces/newUser";
 
 const UserSignup = () => {
   // State to manage the login form data
-  const [signupData, setSignupData] = useState<UserData>({
+  const [signupData, setSignupData] = useState<newUser>({
     username: "",
     email: "",
     password: "",
   });
-
+};
 //   const [loginData, setLoginData] = useState<UserData>({
 //     username: "",
 //     password: "",
