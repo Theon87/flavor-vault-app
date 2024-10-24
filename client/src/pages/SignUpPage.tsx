@@ -1,13 +1,15 @@
 import { useState, FormEvent, ChangeEvent } from "react";
-import Auth from "../utils/auth"; // Import the Auth utility for managing authentication state
-import { login } from "../api/authAPI"; // Import the login function from the API
-import { UserLogin } from "../interfaces/userLogin"; // Import the interface for UserLogin
+// import { UserData } from "../interfaces/userData";
+import { newUser } from "../interfaces/newUser";
+import { signup } from "../api/signupAPI";
+import Auth from "../utils/auth";
 import { Link } from "react-router-dom";
 
-const Login = () => {
+const UserSignup = () => {
   // State to manage the login form data
-  const [loginData, setLoginData] = useState<UserLogin>({
+  const [signupData, setSignupData] = useState<newUser>({
     username: "",
+    email: "",
     password: "",
   });
 
@@ -16,8 +18,8 @@ const Login = () => {
     e: ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => {
     const { name, value } = e.target;
-    setLoginData({
-      ...loginData,
+    setSignupData({
+      ...signupData,
       [name]: value,
     });
   };
@@ -25,22 +27,25 @@ const Login = () => {
   // Handle form submission for login
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
+
     try {
-      // Call the login API endpoint with loginData
-      const data = await login(loginData);
-      // If login is successful, call Auth.login to store the token in localStorage
+      // Call the signup API endpoint with signupData
+      const data = await signup(signupData);
+      // If signup is successful, call Auth.login to store the token in localStorage
       Auth.login(data.token);
     } catch (err) {
-      console.error("Failed to login", err); // Log any errors that occur during login
+      console.error("Failed to signup", err); // Log any errors that occur during signup
     }
-    setLoginData({ username: "", password: "" }); // Reset the form
+
+    setSignupData({ username: "", email: "", password: "" }); // Reset the form
+    
   };
 
   return (
     <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-sm">
         <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
-          Sign in to your account
+          Sign up!
         </h2>
 
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
@@ -52,7 +57,7 @@ const Login = () => {
           >
             <div>
               <label
-                htmlFor="email"
+                htmlFor="username"
                 className="block text-sm font-medium leading-6 text-gray-900"
               >
                 Username
@@ -62,7 +67,26 @@ const Login = () => {
                   id="username"
                   name="username"
                   type="text"
-                  value={loginData.username || ""}
+                  value={signupData.username || ""}
+                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  onChange={handleChange}
+                />
+              </div>
+            </div>
+
+            <div>
+              <label
+                htmlFor="email"
+                className="block text-sm font-medium leading-6 text-gray-900"
+              >
+                Email
+              </label>
+              <div className="mt-2">
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  value={signupData.email || ""}
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                   onChange={handleChange}
                 />
@@ -93,7 +117,7 @@ const Login = () => {
                   type="password"
                   required
                   autoComplete="current-password"
-                  value={loginData.password || ""}
+                  value={signupData.password || ""}
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                   onChange={handleChange}
                 />
@@ -105,18 +129,18 @@ const Login = () => {
                 type="submit"
                 className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
               >
-                Sign in
+                Sign up
               </button>
             </div>
           </form>
 
           <p className="mt-10 text-center text-sm text-gray-500">
-            Not a member?{" "}
-            <Link
-              to= "/signup"
+            Already have an account?{" "}
+            < Link
+              to="/login"
               className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500"
             >
-              Sign up now
+              Login now
             </Link>
           </p>
         </div>
@@ -125,4 +149,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default UserSignup;
