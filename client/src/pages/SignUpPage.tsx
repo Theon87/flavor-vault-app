@@ -1,5 +1,5 @@
 import { useState, FormEvent, ChangeEvent } from "react";
-// import { UserData } from "../interfaces/userData";
+import { UserData } from "../interfaces/userData";
 import { newUser } from "../interfaces/newUser";
 
 const UserSignup = () => {
@@ -10,25 +10,25 @@ const UserSignup = () => {
     password: "",
   });
 };
-//   const [loginData, setLoginData] = useState<UserData>({
-//     username: "",
-//     password: "",
-//   });
+  const [loginData, setLoginData] = useState<UserData>({
+    username: "",
+    password: "",
+  });
 
-//   // Handle changes in the input fields
-//   const handleChange = (
-//     e: ChangeEvent<HTMLInputElement | HTMLSelectElement>
-//   ) => {
-//     const { name, value } = e.target;
-//     setSignupData({
-//       ...signupData,
-//       [name]: value,
-//     });
-//   };
+  // Handle changes in the input fields
+  const handleChange = (
+    e: ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  ) => {
+    const { name, value } = e.target;
+    setSignupData({
+      ...signupData,
+      [name]: value,
+    });
+  };
 
-//   // Handle form submission for login
-//   const handleSubmit = async (e: FormEvent) => {
-//     e.preventDefault();
+  // Handle form submission for login
+  const handleSubmit = async (e: FormEvent) => {
+    e.preventDefault();
 
 //     // Call the signup API endpoint with signupData    
 //     // Create a new user with the signupData
