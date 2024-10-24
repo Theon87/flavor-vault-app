@@ -1,14 +1,13 @@
-// import { useState, FormEvent, ChangeEvent } from "react";
+import { useState, FormEvent, ChangeEvent } from "react";
 // import { UserData } from "../interfaces/userData";
-// // create and import interface for UserSignup
 
-// const UserSignup = () => {
-//   // State to manage the login form data
-//   const [signupData, setSignupData] = useState<unknown>({
-//     username: "",
-//     email: "",
-//     password: "",
-//   });
+const UserSignup = () => {
+  // State to manage the login form data
+  const [signupData, setSignupData] = useState<UserData>({
+    username: "",
+    email: "",
+    password: "",
+  });
 
 //   const [loginData, setLoginData] = useState<UserData>({
 //     username: "",
