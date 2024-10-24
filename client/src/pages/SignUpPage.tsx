@@ -3,6 +3,7 @@ import { useState, FormEvent, ChangeEvent } from "react";
 import { newUser } from "../interfaces/newUser";
 import { signup } from "../api/signupAPI";
 import Auth from "../utils/auth";
+import { Link } from "react-router-dom";
 
 const UserSignup = () => {
   // State to manage the login form data
@@ -135,12 +136,12 @@ const UserSignup = () => {
 
           <p className="mt-10 text-center text-sm text-gray-500">
             Already have an account?{" "}
-            <a
-              href="#"
+            < Link
+              to="/login"
               className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500"
             >
               Login now
-            </a>
+            </Link>
           </p>
         </div>
       </div>
