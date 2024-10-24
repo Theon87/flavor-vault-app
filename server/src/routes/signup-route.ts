@@ -3,9 +3,9 @@ import { User } from '../model/user.js';  // Import the User model
 import jwt from 'jsonwebtoken';  // Import the JSON Web Token library
 
 
-// Login function to authenticate a user
+// Signup function to create a user
 
-export const login = async (req: Request, res: Response) => {
+export const signup = async (req: Request, res: Response) => {
   const { username, email, password } = req.body;  // Extract username and password from request body
 
   try {
@@ -17,6 +17,7 @@ export const login = async (req: Request, res: Response) => {
   
     } catch (error) {
     console.log(error);
+    res.status(500).json({ error: 'Failed to create user' });
     }
 
     // Get the secret key from environment variables
@@ -33,7 +34,7 @@ export const login = async (req: Request, res: Response) => {
 const router = Router();
 
 // POST /login - Login a user
-router.post('/signup', login);  // Define the login route
+router.post('/signup', signup);  // Define the signup route
 
 export default router;  // Export the router instance
 
