@@ -13,7 +13,8 @@ export const signup = async (req: Request, res: Response) => {
     const user = await User.create({ username, email, password });
 
     // If the user is created successfully, send a 201 response
-    return res.status(201).json(user);
+    // return res.status(201).json(user);
+    console.log(user);
   
     } catch (error) {
     console.log(error);
@@ -34,7 +35,7 @@ export const signup = async (req: Request, res: Response) => {
 const router = Router();
 
 // POST /login - Login a user
-router.post('/signup', signup);  // Define the signup route
+router.post('/newUser', signup);  // Define the signup route
 
 export default router;  // Export the router instance
 

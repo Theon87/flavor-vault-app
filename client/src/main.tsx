@@ -7,9 +7,9 @@ import './index.css';
 import ErrorPage from './pages/ErrorPage.tsx';
 import Home from './pages/Home.tsx';
 import Login from './pages/Login.tsx';
-import Signup from './pages/SignUpPage.tsx';
 
 import MyRecipes from './pages/MyRecipes.tsx';
+import UserSignup from './pages/SignUpPage.tsx';
 
 const router = createBrowserRouter([
   {
@@ -31,7 +31,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/signup',
-        element: <Signup />
+        element: <UserSignup />
       }
     ]
   }

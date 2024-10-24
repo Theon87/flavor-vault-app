@@ -12,12 +12,6 @@ const UserSignup = () => {
     password: "",
   });
 
-//   const [loginData, setLoginData] = useState<UserData>({
-//     id: null,
-//     username: null,
-//     email: null,
-//   });
-
   // Handle changes in the input fields
   const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLSelectElement>
@@ -32,13 +26,6 @@ const UserSignup = () => {
   // Handle form submission for login
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-
-//     // Call the signup API endpoint with signupData    
-//     // Create a new user with the signupData
-//     // Store the signupData in the database
-//     // Set signupData as loginData
-//     // Call the login API endpoint with loginData
-//     // If login is successful, call Auth.login to store the token in localStorage
 
     try {
       // Call the signup API endpoint with signupData

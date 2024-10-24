@@ -4,7 +4,7 @@ import { newUser } from "../interfaces/newUser";
 const signup = async (userInfo: newUser) => {
     try {
       // Send a POST request to '/signup' with user information in JSON format
-      const response = await fetch('/signup', {
+      const response = await fetch('/signup/newUser', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
